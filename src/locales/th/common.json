@@ -1,0 +1,17 @@
+{
+  "app": { "name": "Lingda" },
+  "nav": {
+    "home": "Home",
+    "scan": "Scan",
+    "insights": "Insights",
+    "saved": "Saved"
+  },
+  "onboarding": {
+    "step_of": "Step {{current}} of {{total}}",
+    "next": "Next",
+    "back": "Back",
+    "finish": "Finish",
+    "select_one": "Select one",
+    "select_all": "Select all that apply"
+  }
+}

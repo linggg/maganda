@@ -1,0 +1,141 @@
+{
+    "scan": {
+        "title": "Find a Product",
+        "search_placeholder": "Search by product name or brand...",
+        "no_results_title": "No products found",
+        "no_results_subtitle": "Try a different search or paste the ingredient list below",
+        "results_found": "results found",
+        "paste_label": "Or paste ingredient list",
+        "paste_placeholder": "Paste the full ingredient list here e.g. Water, Glycerin, Niacinamide...",
+        "analyse_ingredients": "Analyse Ingredients",
+        "input_methods": "How would you like to check a product?",
+        "method_search": "Search by name",
+        "method_paste": "Paste ingredients",
+        "method_photo": "Take a photo"
+        },
+  "app": {
+    "name": "Lingda"
+  },
+  "nav": {
+    "home": "Home",
+    "scan": "Scan",
+    "insights": "Insights",
+    "saved": "Saved"
+  },
+  "onboarding": {
+    "step_of": "Step {{current}} of {{total}}",
+    "next": "Next",
+    "back": "Back",
+    "finish": "Finish",
+    "select_one": "Select one",
+    "select_all": "Select all that apply",
+    "steps": {
+      "skin_type": {
+        "title": "What is your skin type?",
+        "subtitle": "This helps us personalise your safety assessment",
+        "options": {
+          "oily": "Oily",
+          "oily_desc": "Excess shine, visible pores",
+          "dry": "Dry",
+          "dry_desc": "Tightness, flaking, rough texture",
+          "combination": "Combination",
+          "combination_desc": "Oily T-zone, dry cheeks",
+          "sensitive": "Sensitive",
+          "sensitive_desc": "Easily irritated, reacts quickly",
+          "normal": "Normal",
+          "normal_desc": "Balanced, rarely reacts"
+        }
+      },
+      "skin_concerns": {
+        "title": "What are your skin concerns?",
+        "subtitle": "Select all that apply",
+        "options": {
+          "acne": "Acne & Blemishes",
+          "aging": "Aging & Fine Lines",
+          "hyperpigmentation": "Hyperpigmentation",
+          "redness": "Redness & Rosacea",
+          "dryness": "Dryness",
+          "sun_protection": "Sun Protection",
+          "other": "Other"
+        }
+      },
+      "known_reactions": {
+        "title": "Have you ever reacted badly to a product or ingredient?",
+        "subtitle": "This helps us flag ingredients that have affected you before",
+        "yes": "Yes",
+        "no": "No",
+        "placeholder": "Tell us which ones if you know e.g. fragrance, retinol..."
+      },
+      "gender": {
+        "title": "How do you identify?",
+        "subtitle": "This helps us personalise hormone-related ingredient flags",
+        "options": {
+          "woman": "Woman",
+          "man": "Man",
+          "non_binary": "Non-binary",
+          "prefer_not": "Prefer not to say"
+        }
+      },
+      "age": {
+        "title": "What is your age range?",
+        "subtitle": "Age affects how certain ingredients interact with your body",
+        "options": {
+          "under_18": "Under 18",
+          "18_25": "18 – 25",
+          "26_35": "26 – 35",
+          "36_45": "36 – 45",
+          "46_plus": "46+"
+        }
+      },
+      "hormone_therapy": {
+        "title": "Are you currently on hormone therapy?",
+        "subtitle": "Hormone therapy affects how certain ingredients interact with your body",
+        "options": {
+          "no": "No",
+          "estrogen": "Yes — estrogen-based",
+          "testosterone": "Yes — testosterone-based",
+          "other": "Yes — other",
+          "prefer_not": "Prefer not to say"
+        }
+      },
+      "pregnancy": {
+        "title": "Are you currently pregnant or breastfeeding?",
+        "subtitle": "Some ingredients carry higher risk during pregnancy and breastfeeding",
+        "options": {
+          "no": "No",
+          "pregnant": "Yes — pregnant",
+          "breastfeeding": "Yes — breastfeeding",
+          "prefer_not": "Prefer not to say"
+        }
+      },
+      "hormonal_conditions": {
+        "title": "Do you have any hormonal conditions?",
+        "subtitle": "These affect how your body responds to certain ingredients",
+        "options": {
+          "none": "None",
+          "pcos": "PCOS",
+          "thyroid": "Thyroid condition",
+          "endometriosis": "Endometriosis",
+          "prefer_not": "Prefer not to say"
+        },
+        "options_male": {
+          "none": "None",
+          "thyroid": "Thyroid condition",
+          "prefer_not": "Prefer not to say"
+        }
+      },
+      "sun_exposure": {
+        "title": "How much sun exposure do you get daily?",
+        "subtitle": "This affects how we flag photosensitising ingredients",
+        "options": {
+          "low": "Low",
+          "low_desc": "Mostly indoors",
+          "moderate": "Moderate",
+          "moderate_desc": "Some time outside daily",
+          "high": "High",
+          "high_desc": "Outdoors most of the day"
+        }
+      }
+    }
+  }
+}

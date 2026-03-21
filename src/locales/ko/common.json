@@ -1,0 +1,125 @@
+{
+  "app": { "name": "Lingda" },
+  "nav": {
+    "home": "홈",
+    "scan": "스캔",
+    "insights": "분석",
+    "saved": "저장됨"
+  },
+  "onboarding": {
+    "step_of": "{{total}}단계 중 {{current}}단계",
+    "next": "다음",
+    "back": "뒤로",
+    "finish": "완료",
+    "select_one": "하나 선택",
+    "select_all": "해당하는 모든 항목 선택",
+    "steps": {
+      "skin_type": {
+        "title": "피부 타입이 어떻게 되시나요?",
+        "subtitle": "안전 평가를 개인화하는 데 도움이 됩니다",
+        "options": {
+          "oily": "지성",
+          "oily_desc": "과도한 유분, 넓은 모공",
+          "dry": "건성",
+          "dry_desc": "당김, 각질, 거친 질감",
+          "combination": "복합성",
+          "combination_desc": "T존 지성, 볼 건성",
+          "sensitive": "민감성",
+          "sensitive_desc": "자극에 민감, 빠른 반응",
+          "normal": "중성",
+          "normal_desc": "균형 잡힌 피부, 반응 적음"
+        }
+      },
+      "skin_concerns": {
+        "title": "피부 고민이 무엇인가요?",
+        "subtitle": "해당하는 모든 항목 선택",
+        "options": {
+          "acne": "여드름 & 트러블",
+          "aging": "노화 & 주름",
+          "hyperpigmentation": "색소침착",
+          "redness": "홍조 & 로사세아",
+          "dryness": "건조함",
+          "sun_protection": "자외선 차단",
+          "other": "기타"
+        }
+      },
+      "known_reactions": {
+        "title": "제품이나 성분에 나쁜 반응을 보인 적이 있나요?",
+        "subtitle": "이전에 영향을 미쳤던 성분을 표시하는 데 도움이 됩니다",
+        "yes": "예",
+        "no": "아니오",
+        "placeholder": "알고 있다면 알려주세요. 예: 향료, 레티놀..."
+      },
+      "gender": {
+        "title": "성별을 어떻게 정의하시나요?",
+        "subtitle": "호르몬 관련 성분 경고를 개인화하는 데 도움이 됩니다",
+        "options": {
+          "woman": "여성",
+          "man": "남성",
+          "non_binary": "논바이너리",
+          "prefer_not": "밝히고 싶지 않음"
+        }
+      },
+      "age": {
+        "title": "연령대가 어떻게 되시나요?",
+        "subtitle": "나이는 특정 성분이 신체와 상호작용하는 방식에 영향을 줍니다",
+        "options": {
+          "under_18": "18세 미만",
+          "18_25": "18 – 25세",
+          "26_35": "26 – 35세",
+          "36_45": "36 – 45세",
+          "46_plus": "46세 이상"
+        }
+      },
+      "hormone_therapy": {
+        "title": "현재 호르몬 치료를 받고 계신가요?",
+        "subtitle": "호르몬 치료는 특정 성분이 신체와 상호작용하는 방식에 영향을 줍니다",
+        "options": {
+          "no": "아니오",
+          "estrogen": "예 — 에스트로겐 기반",
+          "testosterone": "예 — 테스토스테론 기반",
+          "other": "예 — 기타",
+          "prefer_not": "밝히고 싶지 않음"
+        }
+      },
+      "pregnancy": {
+        "title": "현재 임신 중이거나 모유 수유 중인가요?",
+        "subtitle": "일부 성분은 임신 및 모유 수유 중 더 높은 위험을 초래합니다",
+        "options": {
+          "no": "아니오",
+          "pregnant": "예 — 임신 중",
+          "breastfeeding": "예 — 모유 수유 중",
+          "prefer_not": "밝히고 싶지 않음"
+        }
+      },
+      "hormonal_conditions": {
+        "title": "호르몬 관련 질환이 있으신가요?",
+        "subtitle": "이는 신체가 특정 성분에 반응하는 방식에 영향을 줍니다",
+        "options": {
+          "none": "없음",
+          "pcos": "다낭성 난소 증후군",
+          "thyroid": "갑상선 질환",
+          "endometriosis": "자궁내막증",
+          "prefer_not": "밝히고 싶지 않음"
+        },
+        "options_male": {
+          "none": "없음",
+          "thyroid": "갑상선 질환",
+          "prefer_not": "밝히고 싶지 않음"
+        }
+      },
+      "sun_exposure": {
+        "title": "하루에 햇빛에 얼마나 노출되시나요?",
+        "subtitle": "광과민성 성분을 표시하는 방식에 영향을 줍니다",
+        "options": {
+          "low": "낮음",
+          "low_desc": "주로 실내",
+          "moderate": "보통",
+          "moderate_desc": "매일 잠시 외출",
+          "high": "높음",
+          "high_desc": "대부분 야외 활동"
+        }
+      }
+    }
+  }
+}

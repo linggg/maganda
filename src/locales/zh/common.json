@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "Lingda"
+  },
+  "nav": {
+    "home": "首页",
+    "scan": "扫描",
+    "insights": "分析",
+    "saved": "已保存"
+  },
+  "onboarding": {
+    "step_of": "第 {{current}} 步，共 {{total}} 步",
+    "next": "下一步",
+    "back": "返回",
+    "finish": "完成",
+    "select_one": "选择一项",
+    "select_all": "选择所有适用项",
+    "steps": {
+      "skin_type": {
+        "title": "您的肤质是什么？",
+        "subtitle": "帮助我们为您个性化安全评估",
+        "options": {
+          "oily": "油性肌肤",
+          "oily_desc": "油光满面，毛孔粗大",
+          "dry": "干性肌肤",
+          "dry_desc": "紧绷感，脱皮，粗糙",
+          "combination": "混合性肌肤",
+          "combination_desc": "T区出油，脸颊干燥",
+          "sensitive": "敏感性肌肤",
+          "sensitive_desc": "容易受刺激，反应快",
+          "normal": "中性肌肤",
+          "normal_desc": "水油平衡，少有反应"
+        }
+      },
+      "skin_concerns": {
+        "title": "您的肌肤问题是什么？",
+        "subtitle": "选择所有适用项",
+        "options": {
+          "acne": "痘痘与瑕疵",
+          "aging": "老化与细纹",
+          "hyperpigmentation": "色素沉着",
+          "redness": "泛红与玫瑰痤疮",
+          "dryness": "干燥",
+          "sun_protection": "防晒",
+          "other": "其他"
+        }
+      },
+      "known_reactions": {
+        "title": "您曾经对某种产品或成分有过不良反应吗？",
+        "subtitle": "帮助我们标记曾经影响过您的成分",
+        "yes": "是",
+        "no": "否",
+        "placeholder": "如果知道请告诉我们，例如：香料、视黄醇..."
+      },
+      "gender": {
+        "title": "您如何定义自己的性别？",
+        "subtitle": "帮助我们个性化与激素相关的成分警告",
+        "options": {
+          "woman": "女性",
+          "man": "男性",
+          "non_binary": "非二元性别",
+          "prefer_not": "不愿透露"
+        }
+      },
+      "age": {
+        "title": "您的年龄段是？",
+        "subtitle": "年龄影响某些成分与身体的相互作用",
+        "options": {
+          "under_18": "18岁以下",
+          "18_25": "18 – 25岁",
+          "26_35": "26 – 35岁",
+          "36_45": "36 – 45岁",
+          "46_plus": "46岁以上"
+        }
+      },
+      "hormone_therapy": {
+        "title": "您目前是否在接受激素治疗？",
+        "subtitle": "激素治疗会影响某些成分与身体的相互作用",
+        "options": {
+          "no": "否",
+          "estrogen": "是 — 雌激素类",
+          "testosterone": "是 — 睾酮类",
+          "other": "是 — 其他",
+          "prefer_not": "不愿透露"
+        }
+      },
+      "pregnancy": {
+        "title": "您目前是否怀孕或哺乳？",
+        "subtitle": "某些成分在怀孕和哺乳期间风险更高",
+        "options": {
+          "no": "否",
+          "pregnant": "是 — 怀孕中",
+          "breastfeeding": "是 — 哺乳中",
+          "prefer_not": "不愿透露"
+        }
+      },
+      "hormonal_conditions": {
+        "title": "您是否有任何激素相关疾病？",
+        "subtitle": "这会影响您的身体对某些成分的反应",
+        "options": {
+          "none": "无",
+          "pcos": "多囊卵巢综合征",
+          "thyroid": "甲状腺疾病",
+          "endometriosis": "子宫内膜异位症",
+          "prefer_not": "不愿透露"
+        },
+        "options_male": {
+          "none": "无",
+          "thyroid": "甲状腺疾病",
+          "prefer_not": "不愿透露"
+        }
+      },
+      "sun_exposure": {
+        "title": "您每天的日晒时间有多少？",
+        "subtitle": "这影响我们如何标记光敏性成分",
+        "options": {
+          "low": "少",
+          "low_desc": "主要在室内",
+          "moderate": "适中",
+          "moderate_desc": "每天有一些户外时间",
+          "high": "多",
+          "high_desc": "大部分时间在户外"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "app": { "name": "Lingda" },
+  "nav": {
+    "home": "Utama",
+    "scan": "Imbas",
+    "insights": "Analisis",
+    "saved": "Disimpan"
+  },
+  "onboarding": {
+    "step_of": "Langkah {{current}} daripada {{total}}",
+    "next": "Seterusnya",
+    "back": "Kembali",
+    "finish": "Selesai",
+    "select_one": "Pilih satu",
+    "select_all": "Pilih semua yang berkenaan",
+    "steps": {
+      "skin_type": {
+        "title": "Apakah jenis kulit anda?",
+        "subtitle": "Membantu kami memperibadikan penilaian keselamatan anda",
+        "options": {
+          "oily": "Berminyak",
+          "oily_desc": "Berkilat, liang roma besar",
+          "dry": "Kering",
+          "dry_desc": "Rasa tegang, mengelupas, kasar",
+          "combination": "Kombinasi",
+          "combination_desc": "Zon T berminyak, pipi kering",
+          "sensitive": "Sensitif",
+          "sensitive_desc": "Mudah iritasi, cepat bertindak balas",
+          "normal": "Normal",
+          "normal_desc": "Seimbang, jarang bertindak balas"
+        }
+      },
+      "skin_concerns": {
+        "title": "Apakah masalah kulit anda?",
+        "subtitle": "Pilih semua yang berkenaan",
+        "options": {
+          "acne": "Jerawat & Bintik",
+          "aging": "Penuaan & Kedutan",
+          "hyperpigmentation": "Hiperpigmentasi",
+          "redness": "Kemerahan & Rosacea",
+          "dryness": "Kekeringan",
+          "sun_protection": "Perlindungan Matahari",
+          "other": "Lain-lain"
+        }
+      },
+      "known_reactions": {
+        "title": "Pernahkah anda bertindak balas buruk terhadap produk atau bahan?",
+        "subtitle": "Membantu kami menandai bahan yang pernah mempengaruhi anda",
+        "yes": "Ya",
+        "no": "Tidak",
+        "placeholder": "Beritahu kami yang mana jika anda tahu, contoh: wangian, retinol..."
+      },
+      "gender": {
+        "title": "Bagaimana anda mengenal pasti diri anda?",
+        "subtitle": "Membantu memperibadikan amaran bahan berkaitan hormon",
+        "options": {
+          "woman": "Wanita",
+          "man": "Lelaki",
+          "non_binary": "Bukan Binari",
+          "prefer_not": "Tidak mahu mendedahkan"
+        }
+      },
+      "age": {
+        "title": "Apakah julat umur anda?",
+        "subtitle": "Umur mempengaruhi cara sesetengah bahan berinteraksi dengan badan",
+        "options": {
+          "under_18": "Bawah 18",
+          "18_25": "18 – 25",
+          "26_35": "26 – 35",
+          "36_45": "36 – 45",
+          "46_plus": "46+"
+        }
+      },
+      "hormone_therapy": {
+        "title": "Adakah anda sedang menjalani terapi hormon?",
+        "subtitle": "Terapi hormon mempengaruhi cara sesetengah bahan berinteraksi dengan badan",
+        "options": {
+          "no": "Tidak",
+          "estrogen": "Ya — berasaskan estrogen",
+          "testosterone": "Ya — berasaskan testosteron",
+          "other": "Ya — lain-lain",
+          "prefer_not": "Tidak mahu mendedahkan"
+        }
+      },
+      "pregnancy": {
+        "title": "Adakah anda sedang hamil atau menyusu?",
+        "subtitle": "Sesetengah bahan membawa risiko lebih tinggi semasa mengandung dan menyusu",
+        "options": {
+          "no": "Tidak",
+          "pregnant": "Ya — sedang hamil",
+          "breastfeeding": "Ya — sedang menyusu",
+          "prefer_not": "Tidak mahu mendedahkan"
+        }
+      },
+      "hormonal_conditions": {
+        "title": "Adakah anda mempunyai sebarang keadaan hormon?",
+        "subtitle": "Ini mempengaruhi cara badan anda bertindak balas terhadap sesetengah bahan",
+        "options": {
+          "none": "Tiada",
+          "pcos": "PCOS",
+          "thyroid": "Keadaan tiroid",
+          "endometriosis": "Endometriosis",
+          "prefer_not": "Tidak mahu mendedahkan"
+        },
+        "options_male": {
+          "none": "Tiada",
+          "thyroid": "Keadaan tiroid",
+          "prefer_not": "Tidak mahu mendedahkan"
+        }
+      },
+      "sun_exposure": {
+        "title": "Berapa banyak pendedahan matahari yang anda dapat setiap hari?",
+        "subtitle": "Ini mempengaruhi cara kami menandai bahan fotosensitif",
+        "options": {
+          "low": "Rendah",
+          "low_desc": "Kebanyakan di dalam rumah",
+          "moderate": "Sederhana",
+          "moderate_desc": "Sedikit masa di luar setiap hari",
+          "high": "Tinggi",
+          "high_desc": "Di luar kebanyakan hari"
+        }
+      }
+    }
+  }
+}

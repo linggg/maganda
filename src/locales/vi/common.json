@@ -1,0 +1,141 @@
+{
+  "app": {
+    "name": "Lingda"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "scan": "Quét",
+    "insights": "Phân tích",
+    "saved": "Đã lưu"
+  },
+  "scan": {
+    "title": "Tìm sản phẩm",
+    "search_placeholder": "Tìm theo tên sản phẩm hoặc thương hiệu...",
+    "no_results_title": "Không tìm thấy sản phẩm",
+    "no_results_subtitle": "Thử tìm kiếm khác hoặc dán danh sách thành phần bên dưới",
+    "results_found": "kết quả",
+    "paste_label": "Hoặc dán danh sách thành phần",
+    "paste_placeholder": "Dán danh sách thành phần đầy đủ ở đây...",
+    "analyse_ingredients": "Phân tích thành phần",
+    "input_methods": "Bạn muốn kiểm tra sản phẩm như thế nào?",
+    "method_search": "Tìm theo tên",
+    "method_paste": "Dán thành phần",
+    "method_photo": "Chụp ảnh"
+    },
+  "onboarding": {
+    "step_of": "Bước {{current}} / {{total}}",
+    "next": "Tiếp theo",
+    "back": "Quay lại",
+    "finish": "Hoàn thành",
+    "select_one": "Chọn một",
+    "select_all": "Chọn tất cả phù hợp",
+    "steps": {
+      "skin_type": {
+        "title": "Da bạn thuộc loại nào?",
+        "subtitle": "Giúp chúng tôi cá nhân hoá đánh giá an toàn cho bạn",
+        "options": {
+          "oily": "Da dầu",
+          "oily_desc": "Bóng nhờn, lỗ chân lông to",
+          "dry": "Da khô",
+          "dry_desc": "Căng da, bong tróc, thô ráp",
+          "combination": "Da hỗn hợp",
+          "combination_desc": "Vùng T dầu, má khô",
+          "sensitive": "Da nhạy cảm",
+          "sensitive_desc": "Dễ kích ứng, phản ứng nhanh",
+          "normal": "Da thường",
+          "normal_desc": "Cân bằng, ít phản ứng"
+        }
+      },
+      "skin_concerns": {
+        "title": "Vấn đề da bạn đang gặp?",
+        "subtitle": "Chọn tất cả phù hợp",
+        "options": {
+          "acne": "Mụn & Thâm",
+          "aging": "Lão hoá & Nếp nhăn",
+          "hyperpigmentation": "Tăng sắc tố",
+          "redness": "Đỏ da & Rosacea",
+          "dryness": "Da khô",
+          "sun_protection": "Chống nắng",
+          "other": "Khác"
+        }
+      },
+      "known_reactions": {
+        "title": "Bạn đã từng phản ứng xấu với sản phẩm hoặc thành phần nào chưa?",
+        "subtitle": "Giúp chúng tôi gắn cờ các thành phần đã ảnh hưởng đến bạn trước đây",
+        "yes": "Có",
+        "no": "Không",
+        "placeholder": "Cho chúng tôi biết thành phần nào nếu bạn biết, ví dụ: hương liệu, retinol..."
+      },
+      "gender": {
+        "title": "Bạn xác định giới tính như thế nào?",
+        "subtitle": "Giúp cá nhân hoá các cảnh báo thành phần liên quan đến hormone",
+        "options": {
+          "woman": "Phụ nữ",
+          "man": "Nam giới",
+          "non_binary": "Phi nhị giới",
+          "prefer_not": "Không muốn tiết lộ"
+        }
+      },
+      "age": {
+        "title": "Độ tuổi của bạn?",
+        "subtitle": "Tuổi ảnh hưởng đến cách một số thành phần tương tác với cơ thể",
+        "options": {
+          "under_18": "Dưới 18",
+          "18_25": "18 – 25",
+          "26_35": "26 – 35",
+          "36_45": "36 – 45",
+          "46_plus": "46+"
+        }
+      },
+      "hormone_therapy": {
+        "title": "Bạn có đang điều trị hormone không?",
+        "subtitle": "Liệu pháp hormone ảnh hưởng đến cách một số thành phần tương tác với cơ thể",
+        "options": {
+          "no": "Không",
+          "estrogen": "Có — estrogen",
+          "testosterone": "Có — testosterone",
+          "other": "Có — khác",
+          "prefer_not": "Không muốn tiết lộ"
+        }
+      },
+      "pregnancy": {
+        "title": "Bạn có đang mang thai hoặc cho con bú không?",
+        "subtitle": "Một số thành phần có nguy cơ cao hơn khi mang thai và cho con bú",
+        "options": {
+          "no": "Không",
+          "pregnant": "Có — đang mang thai",
+          "breastfeeding": "Có — đang cho con bú",
+          "prefer_not": "Không muốn tiết lộ"
+        }
+      },
+      "hormonal_conditions": {
+        "title": "Bạn có tình trạng hormone nào không?",
+        "subtitle": "Ảnh hưởng đến cách cơ thể bạn phản ứng với một số thành phần",
+        "options": {
+          "none": "Không có",
+          "pcos": "PCOS",
+          "thyroid": "Bệnh tuyến giáp",
+          "endometriosis": "Lạc nội mạc tử cung",
+          "prefer_not": "Không muốn tiết lộ"
+        },
+        "options_male": {
+          "none": "Không có",
+          "thyroid": "Bệnh tuyến giáp",
+          "prefer_not": "Không muốn tiết lộ"
+        }
+      },
+      "sun_exposure": {
+        "title": "Bạn tiếp xúc với ánh nắng mặt trời bao nhiêu mỗi ngày?",
+        "subtitle": "Ảnh hưởng đến cách chúng tôi gắn cờ các thành phần nhạy cảm với ánh sáng",
+        "options": {
+          "low": "Thấp",
+          "low_desc": "Chủ yếu ở trong nhà",
+          "moderate": "Trung bình",
+          "moderate_desc": "Ra ngoài một chút mỗi ngày",
+          "high": "Cao",
+          "high_desc": "Ở ngoài trời hầu hết ngày"
+        }
+      }
+    }
+  }
+}
