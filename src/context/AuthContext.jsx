@@ -7,10 +7,18 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [profile, setProfile] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [recoveryMode, setRecoveryMode] = useState(false)
 
   useEffect(() => {
+    // Check synchronously before any async work — hash is cleared by Supabase after getSession resolves
+    const isPasswordRecovery = window.location.hash.includes('type=recovery')
+
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
+      if (isPasswordRecovery) {
+        // Skip normal auth flow entirely — onAuthStateChange(PASSWORD_RECOVERY) owns this path
+        return
+      }
       setUser(session?.user ?? null)
       if (session?.user) fetchProfile(session.user.id)
       else setLoading(false)
@@ -18,10 +26,18 @@ export function AuthProvider({ children }) {
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
+      async (event, session) => {
+        if (event === 'PASSWORD_RECOVERY') {
+          setRecoveryMode(true)
+          setUser(session?.user ?? null)
+          setLoading(false)
+          return
+        }
         setUser(session?.user ?? null)
-        if (session?.user) fetchProfile(session.user.id)
-        else {
+        if (session?.user) {
+          setLoading(true)
+          fetchProfile(session.user.id)
+        } else {
           setProfile(null)
           setLoading(false)
         }
@@ -41,7 +57,6 @@ export function AuthProvider({ children }) {
       .limit(1)
       .maybeSingle()
 
-    console.log('Profile fetch:', { data, error, userId })
     setProfile(data)
   } catch (err) {
     console.error('Profile fetch error:', err)
@@ -67,8 +82,12 @@ export function AuthProvider({ children }) {
     if (error) throw error
   }
 
+  function clearRecoveryMode() {
+    setRecoveryMode(false)
+  }
+
   return (
-    <AuthContext.Provider value={{ user, profile, loading, signUp, signIn, signOut, fetchProfile }}>
+    <AuthContext.Provider value={{ user, profile, loading, recoveryMode, clearRecoveryMode, signUp, signIn, signOut, fetchProfile }}>
       {children}
     </AuthContext.Provider>
   )

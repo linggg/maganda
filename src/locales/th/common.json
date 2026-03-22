@@ -1,10 +1,120 @@
 {
   "app": { "name": "Lingda" },
+  "reset_password": {
+    "title": "ตั้งรหัสผ่านใหม่",
+    "subtitle": "เลือกรหัสผ่านใหม่สำหรับบัญชีของคุณ",
+    "new_password_label": "รหัสผ่านใหม่",
+    "confirm_password_label": "ยืนยันรหัสผ่าน",
+    "submit": "อัปเดตรหัสผ่าน",
+    "success": "อัปเดตรหัสผ่านแล้ว กำลังนำคุณไปยังโปรไฟล์…",
+    "error_required": "กรุณากรอกข้อมูลทั้งสองช่อง",
+    "error_mismatch": "รหัสผ่านไม่ตรงกัน",
+    "error_too_short": "รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร",
+    "error_generic": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง"
+  },
   "nav": {
     "home": "Home",
-    "scan": "Scan",
+    "check": "ตรวจสอบ",
     "insights": "Insights",
-    "saved": "Saved"
+    "saved": "Saved",
+    "profile": "โปรไฟล์"
+  },
+  "profile": {
+    "title": "โปรไฟล์",
+    "account_section": "บัญชี",
+    "display_name_label": "ชื่อ",
+    "display_name_placeholder": "เพิ่มชื่อของคุณ",
+    "save": "บันทึก",
+    "email_label": "อีเมล",
+    "change_password": "เปลี่ยนรหัสผ่าน",
+    "password_sent": "ส่งลิงก์รีเซ็ตไปยังอีเมลของคุณแล้ว",
+    "language_label": "ภาษา",
+    "completeness_section": "โปรไฟล์ของคุณ",
+    "completeness_face": "ใบหน้าและผิวหนัง",
+    "completeness_scalp_hair": "หนังศีรษะและเส้นผม",
+    "completeness_body": "ร่างกาย",
+    "completeness_nails": "เล็บ",
+    "completeness_notes": "บันทึกเพิ่มเติม",
+    "completeness_add": "เพิ่ม",
+    "edit_section": "แก้ไขโปรไฟล์",
+    "danger_section": "โซนอันตราย",
+    "logout": "ออกจากระบบ",
+    "delete_account": "ลบบัญชี",
+    "delete_confirm_title": "ลบบัญชีของคุณ?",
+    "delete_confirm_body": "การดำเนินการนี้จะลบข้อมูลทั้งหมดของคุณอย่างถาวร พิมพ์ \"delete my account\" เพื่อยืนยัน",
+    "delete_confirm_placeholder": "delete my account",
+    "delete_confirm_button": "ลบถาวร",
+    "cancel": "ยกเลิก"
+  },
+  "check": {
+    "title": "ค้นหาผลิตภัณฑ์",
+    "search_placeholder": "ค้นหาตามชื่อผลิตภัณฑ์หรือแบรนด์...",
+    "no_results_title": "ไม่พบผลิตภัณฑ์",
+    "no_results_subtitle": "ลองค้นหาอื่นหรือวางรายการส่วนผสม",
+    "results_found": "ผลลัพธ์",
+    "paste_label": "หรือวางรายการส่วนผสม",
+    "paste_placeholder": "วางรายการส่วนผสมทั้งหมดที่นี่...",
+    "analyse_ingredients": "วิเคราะห์ส่วนผสม",
+    "analysing": "กำลังวิเคราะห์...",
+    "input_methods": "คุณต้องการตรวจสอบผลิตภัณฑ์อย่างไร?",
+    "method_search": "ค้นหาตามชื่อ",
+    "method_paste": "วางส่วนผสม",
+    "method_photo": "ถ่ายภาพ",
+    "ocr_subtitle": "จ่อกล้องไปที่รายการส่วนผสมบนผลิตภัณฑ์",
+    "ocr_select_photo": "ถ่ายภาพหรืออัปโหลดจากแกลเลอรี",
+    "ocr_take_photo": "ถ่ายภาพ",
+    "ocr_upload_gallery": "อัปโหลดจากแกลเลอรี",
+    "ocr_reading": "กำลังอ่านภาพ…",
+    "ocr_identifying": "กำลังระบุส่วนผสม…",
+    "ocr_confidence_high": "ความแม่นยำสูง",
+    "ocr_confidence_medium": "ความแม่นยำปานกลาง",
+    "ocr_confidence_low": "ความแม่นยำต่ำ — กรุณาตรวจสอบรายการ",
+    "ocr_ingredient_label": "รายการส่วนผสม",
+    "ocr_confirm_button": "ตรวจสอบความปลอดภัย →",
+    "ocr_retry": "ลองอีกครั้ง",
+    "ocr_switch_paste": "พิมพ์หรือวางแทน",
+    "ocr_error_no_text": "ไม่สามารถอ่านภาพนี้ได้ชัดเจน",
+    "ocr_error_no_ingredients": "ไม่พบส่วนผสมในภาพนี้",
+    "ocr_error_failed": "ไม่สามารถประมวลผลภาพได้",
+    "ocr_error_too_large": "ภาพใหญ่เกินไป — ลองถ่ายภาพให้ใกล้ขึ้น",
+    "ocr_tip": "เคล็ดลับ: วางสินค้าให้ราบ แสงสว่างเพียงพอ กล้องขนานกับฉลาก",
+    "recent_title": "ล่าสุด",
+    "see_all": "ดูทั้งหมด",
+    "ocr_no_ingredients_visible": "ไม่เห็นรายการส่วนผสมในภาพ เราระบุผลิตภัณฑ์ได้แล้ว — ต้องการค้นหาส่วนผสมไหม?",
+    "ocr_search_ingredients": "ค้นหาส่วนผสม →"
+  },
+  "history": {
+    "title": "ประวัติการประเมิน",
+    "empty": "ยังไม่มีการประเมิน เริ่มต้นด้วยการตรวจสอบผลิตภัณฑ์",
+    "search_placeholder": "ค้นหาตามชื่อผลิตภัณฑ์...",
+    "no_results": "ไม่พบผลลัพธ์สำหรับการค้นหาของคุณ"
+  },
+  "saved": {
+    "title": "บันทึกแล้ว",
+    "filter_liked": "ชอบ",
+    "filter_want_to_try": "อยากลอง",
+    "filter_avoid": "หลีกเลี่ยง",
+    "empty_liked": "ยังไม่มีรายการที่ชอบ",
+    "empty_want_to_try": "รายการอยากลองยังว่างอยู่",
+    "empty_avoid": "ไม่มีผลิตภัณฑ์ที่ถูกทำเครื่องหมายให้หลีกเลี่ยง",
+    "empty_sub": "ไปที่ตรวจสอบเพื่อประเมินผลิตภัณฑ์"
+  },
+  "assessment": {
+    "verdict_title": "ความคิดเห็นของคุณ",
+    "verdict_liked": "ชอบ",
+    "verdict_want_to_try": "อยากลอง",
+    "verdict_avoid": "หลีกเลี่ยง",
+
+    "verdict_anonymous_note": "ค้นหาตามชื่อผลิตภัณฑ์เพื่อบันทึกการประเมินนี้"
+  },
+  "nudge": {
+    "title": "เติมเต็มโปรไฟล์ของคุณ",
+    "subtitle": "เพิ่มหมายเหตุเพื่อรับการประเมินความปลอดภัยที่ตรงกับคุณมากขึ้น",
+    "cta": "เพิ่มหมายเหตุ",
+    "dismiss": "ไม่ใช่ตอนนี้",
+    "title_v2": "ขยายโปรไฟล์ของคุณ",
+    "subtitle_v2": "เพิ่มข้อมูลเส้นผม ร่างกาย และเล็บเพื่อการประเมินที่แม่นยำขึ้น",
+    "cta_v2": "เพิ่มเติม"
   },
   "onboarding": {
     "step_of": "Step {{current}} of {{total}}",
@@ -12,6 +122,53 @@
     "back": "Back",
     "finish": "Finish",
     "select_one": "Select one",
-    "select_all": "Select all that apply"
+    "select_all": "Select all that apply",
+    "steps": {
+      "additional_notes": {
+        "title": "มีอะไรอื่นที่เราควรรู้อีกไหม?",
+        "subtitle": "อาการแพ้ ปัญหาผิว ความไวต่อสารต่างๆ — อะไรก็ตามที่ส่งผลต่อผลิตภัณฑ์ที่ใช้กับผิวของคุณ",
+        "placeholder": "เช่น แพ้ยาง เป็นผื่นแพ้ โรคผิวหนังอักเสบ..."
+      },
+      "scalp_hair": {
+        "title": "บอกเราเกี่ยวกับหนังศีรษะและเส้นผมของคุณ",
+        "subtitle": "ช่วยให้เราปรับแต่งการประเมินสำหรับผลิตภัณฑ์เส้นผมและหนังศีรษะ",
+        "scalp_label": "ประเภทหนังศีรษะ",
+        "hair_label": "ปัญหาเส้นผม",
+        "scalp_options": {
+          "oily": "มัน",
+          "dry": "แห้ง",
+          "normal": "ปกติ",
+          "sensitive": "แพ้ง่าย"
+        },
+        "hair_options": {
+          "dandruff": "รังแค",
+          "thinning_loss": "ผมบางหรือผมร่วง",
+          "frizz": "ผมฟู",
+          "dryness": "แห้ง",
+          "colour_treated": "ผมย้อมสี",
+          "chemically_treated": "ผ่านการทำเคมี (ยืด เคราติน ดัด)"
+        }
+      },
+      "body_skin": {
+        "title": "มีปัญหาผิวบริเวณร่างกายไหม?",
+        "subtitle": "ช่วยระบุส่วนผสมที่เกี่ยวข้องในผลิตภัณฑ์ดูแลร่างกาย",
+        "options": {
+          "dryness_eczema": "ผิวแห้งหรือผื่นแพ้",
+          "keratosis_pilaris": "ผิวขรุขระจากรูขุมขน",
+          "hyperpigmentation": "รอยดำ",
+          "sensitive_reactive": "ผิวแพ้ง่ายหรือระคายเคือง"
+        }
+      },
+      "nails": {
+        "title": "บอกเราเกี่ยวกับเล็บของคุณ",
+        "subtitle": "ช่วยระบุส่วนผสมที่เกี่ยวข้องในผลิตภัณฑ์เล็บ",
+        "options": {
+          "brittle": "เล็บเปราะหรืออ่อนแอ",
+          "fungal_prone": "เล็บติดเชื้อราได้ง่าย",
+          "sensitive_cuticles": "หนังเล็บบอบบาง"
+        },
+        "chemical_exposure_label": "ฉันใช้เจล อะคริลิก หรือดิปพาวเดอร์เป็นประจำ"
+      }
+    }
   }
 }

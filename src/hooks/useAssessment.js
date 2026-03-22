@@ -63,6 +63,8 @@ export function useAssessment({ productId, productName, brand, ingredients, user
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+              productId,
+              profileId: userProfile?.id,
               productName,
               brand,
               ingredients,

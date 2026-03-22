@@ -29,7 +29,7 @@ const concernLabels = {
   other: 'Other',
 }
 
-export default function EfficacyCard({ concern, efficacy }) {
+export default function EfficacyCard({ concern, efficacy, hasResolvedProduct }) {
   if (!efficacy) return null
 
   const verdict = efficacy.efficacy_verdict || 'unlikely_effective'
@@ -105,7 +105,7 @@ export default function EfficacyCard({ concern, efficacy }) {
         </div>
       )}
 
-      {reviewSummary.length > 0 && (
+      {hasResolvedProduct && reviewSummary.length > 0 && (
         <div
           className="rounded-lg p-3 mt-2"
           style={{ backgroundColor: '#f2f4f3' }}

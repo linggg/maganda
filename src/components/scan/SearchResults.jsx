@@ -13,10 +13,10 @@ export default function SearchResults({ results, onSelect, query }) {
           search_off
         </span>
         <p className="font-bold text-sm text-on-surface mb-1">
-          {t('scan.no_results_title')}
+          {t('check.no_results_title')}
         </p>
         <p className="text-xs text-on-surface-variant">
-          {t('scan.no_results_subtitle')}
+          {t('check.no_results_subtitle')}
         </p>
       </div>
     )
@@ -25,7 +25,7 @@ export default function SearchResults({ results, onSelect, query }) {
   return (
     <div className="space-y-3">
       <p className="text-xs text-on-surface-variant font-medium">
-        {results.length} {t('scan.results_found')}
+        {results.length} {t('check.results_found')}
       </p>
       {results.map(product => (
         <ProductCard

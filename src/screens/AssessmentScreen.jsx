@@ -1,17 +1,25 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useAuth } from '../context/AuthContext'
 import { useAssessment } from '../hooks/useAssessment'
 import SafetyVerdict from '../components/assessment/SafetyVerdict'
 import FlaggedIngredient from '../components/assessment/FlaggedIngredient'
 import BeneficialIngredient from '../components/assessment/BeneficialIngredient'
 import EfficacyCard from '../components/assessment/EfficacyCard'
+import VerdictButtons from '../components/assessment/VerdictButtons'
 
 export default function AssessmentScreen() {
   const { state } = useLocation()
   const navigate = useNavigate()
- 
+
+  const { t } = useTranslation()
   const { profile } = useAuth()
-console.log('Profile:', profile)
+
+  const ANONYMOUS_NAMES = ['User submitted product', 'Scanned product']
+  const hasResolvedProduct = !!(
+    state?.productName &&
+    !ANONYMOUS_NAMES.includes(state.productName)
+  )
 
   const {
     safety,
@@ -128,6 +136,15 @@ console.log('Profile:', profile)
           ) : null}
         </section>
 
+        {!safetyLoading && safety && (
+          hasResolvedProduct ? (
+            <VerdictButtons
+              assessmentId={safety.id}
+              initialVerdict={safety.user_verdict}
+            />
+          ) : null
+        )}
+
         <div style={{ borderTop: '1px solid #e6e9e8' }} />
 
         <section>
@@ -149,7 +166,7 @@ console.log('Profile:', profile)
           ) : (
             <div className="space-y-4">
               {Object.entries(efficacy).map(([concern, data]) => (
-                <EfficacyCard key={concern} concern={concern} efficacy={data} />
+                <EfficacyCard key={concern} concern={concern} efficacy={data} hasResolvedProduct={hasResolvedProduct} />
               ))}
               {Object.keys(efficacy).length === 0 && (
                 <p className="text-sm text-on-surface-variant">No efficacy data available.</p>

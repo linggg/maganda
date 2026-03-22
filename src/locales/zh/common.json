@@ -2,11 +2,121 @@
   "app": {
     "name": "Lingda"
   },
+  "reset_password": {
+    "title": "设置新密码",
+    "subtitle": "为您的账户选择新密码",
+    "new_password_label": "新密码",
+    "confirm_password_label": "确认密码",
+    "submit": "更新密码",
+    "success": "密码已更新，正在跳转到您的个人页面…",
+    "error_required": "请填写两个字段",
+    "error_mismatch": "两次输入的密码不一致",
+    "error_too_short": "密码长度至少为6位",
+    "error_generic": "出现错误，请重试。"
+  },
   "nav": {
     "home": "首页",
-    "scan": "扫描",
+    "check": "检查",
     "insights": "分析",
-    "saved": "已保存"
+    "saved": "已保存",
+    "profile": "我的"
+  },
+  "profile": {
+    "title": "我的",
+    "account_section": "账户",
+    "display_name_label": "姓名",
+    "display_name_placeholder": "添加您的姓名",
+    "save": "保存",
+    "email_label": "邮箱",
+    "change_password": "修改密码",
+    "password_sent": "重置链接已发送至您的邮箱",
+    "language_label": "语言",
+    "completeness_section": "我的档案",
+    "completeness_face": "面部与肌肤",
+    "completeness_scalp_hair": "头皮与头发",
+    "completeness_body": "身体",
+    "completeness_nails": "指甲",
+    "completeness_notes": "额外备注",
+    "completeness_add": "添加",
+    "edit_section": "编辑档案",
+    "danger_section": "危险操作",
+    "logout": "退出登录",
+    "delete_account": "删除账户",
+    "delete_confirm_title": "删除您的账户？",
+    "delete_confirm_body": "这将永久删除您的所有数据。请输入 \"delete my account\" 以确认。",
+    "delete_confirm_placeholder": "delete my account",
+    "delete_confirm_button": "永久删除",
+    "cancel": "取消"
+  },
+  "check": {
+    "title": "查找产品",
+    "search_placeholder": "按产品名称或品牌搜索...",
+    "no_results_title": "未找到产品",
+    "no_results_subtitle": "尝试不同的搜索或粘贴成分列表",
+    "results_found": "个结果",
+    "paste_label": "或粘贴成分列表",
+    "paste_placeholder": "在此粘贴完整的成分列表...",
+    "analyse_ingredients": "分析成分",
+    "analysing": "分析中...",
+    "input_methods": "您想如何检查产品？",
+    "method_search": "按名称搜索",
+    "method_paste": "粘贴成分",
+    "method_photo": "拍照",
+    "ocr_subtitle": "将相机对准产品上的成分表",
+    "ocr_select_photo": "拍照或从相册上传",
+    "ocr_take_photo": "拍照",
+    "ocr_upload_gallery": "从相册上传",
+    "ocr_reading": "正在读取图片…",
+    "ocr_identifying": "正在识别成分…",
+    "ocr_confidence_high": "高置信度",
+    "ocr_confidence_medium": "中等置信度",
+    "ocr_confidence_low": "低置信度 — 请检查列表",
+    "ocr_ingredient_label": "成分列表",
+    "ocr_confirm_button": "检查安全性 →",
+    "ocr_retry": "重试",
+    "ocr_switch_paste": "改为输入或粘贴",
+    "ocr_error_no_text": "无法清晰读取此图片",
+    "ocr_error_no_ingredients": "此图片中未找到成分",
+    "ocr_error_failed": "无法处理此照片",
+    "ocr_error_too_large": "图片太大 — 请尝试拍更近的照片",
+    "ocr_tip": "提示：将产品平放，光线充足，相机与标签平行",
+    "recent_title": "最近",
+    "see_all": "查看全部",
+    "ocr_no_ingredients_visible": "照片中未看到成分列表。我们已识别该产品 — 要搜索其成分吗？",
+    "ocr_search_ingredients": "查找成分 →"
+  },
+  "nudge": {
+    "title": "完善您的档案",
+    "subtitle": "添加备注以获得更个性化的安全评估",
+    "cta": "添加备注",
+    "dismiss": "暂不",
+    "title_v2": "扩展您的档案",
+    "subtitle_v2": "添加头发、身体和指甲信息以获得更精准的评估",
+    "cta_v2": "添加更多"
+  },
+  "history": {
+    "title": "评估历史",
+    "empty": "暂无评估记录。开始检查产品吧。",
+    "search_placeholder": "按产品名称搜索...",
+    "no_results": "没有找到相关结果。"
+  },
+  "saved": {
+    "title": "已保存",
+    "filter_liked": "喜欢",
+    "filter_want_to_try": "想试试",
+    "filter_avoid": "避免使用",
+    "empty_liked": "还没有喜欢的产品",
+    "empty_want_to_try": "试用列表还是空的",
+    "empty_avoid": "没有标记为避免的产品",
+    "empty_sub": "前往检查以评估产品"
+  },
+  "assessment": {
+    "verdict_title": "您的评价",
+    "verdict_liked": "喜欢",
+    "verdict_want_to_try": "想试试",
+    "verdict_avoid": "避免使用",
+
+    "verdict_anonymous_note": "按产品名称搜索以保存此评估。"
   },
   "onboarding": {
     "step_of": "第 {{current}} 步，共 {{total}} 步",
@@ -109,6 +219,51 @@
           "thyroid": "甲状腺疾病",
           "prefer_not": "不愿透露"
         }
+      },
+      "additional_notes": {
+        "title": "还有什么我们需要了解的吗？",
+        "subtitle": "过敏、皮肤状况、敏感情况——任何影响您护肤品使用的因素",
+        "placeholder": "例如：乳胶过敏、湿疹、玫瑰痤疮..."
+      },
+      "scalp_hair": {
+        "title": "告诉我们您的头皮和头发状况",
+        "subtitle": "帮助我们为发用产品和头皮产品提供个性化评估",
+        "scalp_label": "头皮类型",
+        "hair_label": "头发问题",
+        "scalp_options": {
+          "oily": "油性",
+          "dry": "干性",
+          "normal": "正常",
+          "sensitive": "敏感"
+        },
+        "hair_options": {
+          "dandruff": "头皮屑",
+          "thinning_loss": "发量稀少或脱发",
+          "frizz": "毛躁",
+          "dryness": "干燥",
+          "colour_treated": "染发",
+          "chemically_treated": "化学处理（拉直、角蛋白、烫发）"
+        }
+      },
+      "body_skin": {
+        "title": "身体皮肤有什么问题？",
+        "subtitle": "帮助标记身体护肤品中的相关成分",
+        "options": {
+          "dryness_eczema": "干燥或湿疹",
+          "keratosis_pilaris": "毛囊角化症",
+          "hyperpigmentation": "色素沉着",
+          "sensitive_reactive": "敏感或易反应肌肤"
+        }
+      },
+      "nails": {
+        "title": "告诉我们您的指甲状况",
+        "subtitle": "帮助标记指甲产品中的相关成分",
+        "options": {
+          "brittle": "脆弱或易断",
+          "fungal_prone": "易感染真菌",
+          "sensitive_cuticles": "甲周皮肤敏感"
+        },
+        "chemical_exposure_label": "我经常使用凝胶、亚克力或浸泡粉"
       },
       "sun_exposure": {
         "title": "您每天的日晒时间有多少？",

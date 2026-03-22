@@ -1,7 +1,13 @@
+import TopBar from '../components/TopBar'
+import ProfileNudge from '../components/home/ProfileNudge'
+
 export default function HomeScreen() {
   return (
-    <div className="p-6 pt-24">
-      <h1 className="font-headline text-2xl font-bold text-primary">Home</h1>
+    <div className="min-h-screen bg-background">
+      <TopBar />
+      <main className="pt-24 pb-32 px-6">
+        <ProfileNudge />
+      </main>
     </div>
   )
 }

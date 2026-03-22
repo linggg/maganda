@@ -21,33 +21,95 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Ingredients and user profile are required' })
   }
 
+  function inferCategory(productType) {
+    if (!productType) return 'skincare'
+    const t = productType.toLowerCase()
+    if (/hair|shampoo|conditioner|scalp/.test(t)) return 'haircare'
+    if (/nail|polish|lacquer|gel nail|acrylic/.test(t)) return 'nail'
+    if (/body|body lotion|body wash|scrub|deodorant/.test(t)) return 'bodycare'
+    if (/foundation|mascara|lipstick|eyeshadow|blush|bronzer|concealer|primer|makeup/.test(t)) return 'makeup'
+    if (/fragrance|perfume|cologne|eau de/.test(t)) return 'fragrance'
+    return 'skincare'
+  }
+
+  function buildProfileContext(profile, category) {
+    const notes = profile.additional_notes ? `\n- Additional notes: ${profile.additional_notes}` : ''
+    switch (category) {
+      case 'haircare':
+        return `User profile (haircare):
+- Scalp type: ${profile.scalp_type || 'not specified'}
+- Hair concerns: ${profile.hair_concerns?.join(', ') || 'none'}${notes}`
+      case 'bodycare':
+        return `User profile (bodycare):
+- Body concerns: ${profile.body_concerns?.join(', ') || 'none'}${notes}`
+      case 'nail':
+        return `User profile (nail):
+- Nail concerns: ${profile.nail_concerns?.join(', ') || 'none'}
+- Regular gel/acrylic/dip powder use: ${profile.nail_chemical_exposure ? 'yes' : 'no'}${notes}`
+      case 'fragrance':
+        return `User profile (full):
+- Skin type: ${profile.skin_type}
+- Skin concerns: ${profile.skin_concerns?.join(', ')}
+- Gender identity: ${profile.gender_identity}
+- Age range: ${profile.age_range}
+- Hormone therapy: ${profile.hormone_therapy || 'none'}
+- Pregnancy/breastfeeding: ${profile.pregnancy_status || 'no'}
+- Hormonal conditions: ${profile.hormonal_conditions?.join(', ') || 'none'}
+- Sun exposure: ${profile.sun_exposure}
+- Known reactions: ${profile.known_reactions || 'none'}
+- Scalp type: ${profile.scalp_type || 'not specified'}
+- Hair concerns: ${profile.hair_concerns?.join(', ') || 'none'}
+- Body concerns: ${profile.body_concerns?.join(', ') || 'none'}
+- Nail concerns: ${profile.nail_concerns?.join(', ') || 'none'}${notes}`
+      default: // skincare, makeup
+        return `User profile (${category}):
+- Skin type: ${profile.skin_type}
+- Skin concerns: ${profile.skin_concerns?.join(', ')}
+- Gender identity: ${profile.gender_identity}
+- Age range: ${profile.age_range}
+- Hormone therapy: ${profile.hormone_therapy || 'none'}
+- Pregnancy/breastfeeding: ${profile.pregnancy_status || 'no'}
+- Hormonal conditions: ${profile.hormonal_conditions?.join(', ') || 'none'}
+- Sun exposure: ${profile.sun_exposure}
+- Known reactions: ${profile.known_reactions || 'none'}${notes}`
+    }
+  }
+
+  const t0 = Date.now()
+  console.log('[Safety] Start')
+
   try {
-    // Check cache
+    let category = 'skincare'
+
     if (productId) {
-      const { data: cached } = await supabase
-        .from('assessments')
-        .select('*')
-        .eq('product_id', productId)
-        .eq('profile_id', userProfile.id)
-        .single()
+      const [{ data: cached }, { data: product }] = await Promise.all([
+        supabase
+          .from('assessments')
+          .select('*')
+          .eq('product_id', productId)
+          .eq('profile_id', userProfile.id)
+          .order('created_at', { ascending: false })
+          .limit(1)
+          .maybeSingle(),
+        supabase
+          .from('products')
+          .select('product_type')
+          .eq('id', productId)
+          .maybeSingle(),
+      ])
+
+      console.log('[Safety] DB reads done:', Date.now() - t0, 'ms')
 
       if (cached) {
+        console.log('[Safety] Cache hit, returning')
         return res.status(200).json({ source: 'cache', assessment: cached })
       }
+
+      console.log('[Safety] Cache miss, calling Claude')
+      category = inferCategory(product?.product_type)
     }
 
-    const profileContext = `
-User profile:
-- Skin type: ${userProfile.skin_type}
-- Skin concerns: ${userProfile.skin_concerns?.join(', ')}
-- Gender identity: ${userProfile.gender_identity}
-- Age range: ${userProfile.age_range}
-- Hormone therapy: ${userProfile.hormone_therapy || 'none'}
-- Pregnancy/breastfeeding: ${userProfile.pregnancy_status || 'no'}
-- Hormonal conditions: ${userProfile.hormonal_conditions?.join(', ') || 'none'}
-- Sun exposure: ${userProfile.sun_exposure}
-- Known reactions: ${userProfile.known_reactions || 'none'}
-`
+    const profileContext = buildProfileContext(userProfile, category)
 
     const response = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
@@ -55,7 +117,7 @@ User profile:
       messages: [
         {
           role: 'user',
-          content: `You are a cosmetic ingredient safety analyst. Analyse this ingredient list for a specific user.
+          content: `You are a cosmetic ingredient safety analyst. Analyse this ${category} product's ingredient list for a specific user.
 
 ${profileContext}
 
@@ -98,6 +160,8 @@ Rules:
       ]
     })
 
+    console.log('[Safety] Claude done:', Date.now() - t0, 'ms')
+
     const textBlock = response.content.find(b => b.type === 'text')
     if (!textBlock) throw new Error('No response from Claude')
 
@@ -114,20 +178,26 @@ try {
   throw new Error('Failed to parse safety assessment')
 }
 
-    // Save to Supabase
+    // Save to Supabase — upsert on unique (product_id, profile_id).
+    // user_verdict is intentionally excluded so it is never overwritten.
     const { data: saved } = await supabase
       .from('assessments')
-      .insert([{
-        product_id: productId || null,
-        profile_id: userProfile.id,
-        safety_verdict: assessment.verdict,
-        safety_summary: assessment.summary,
-        flagged_ingredients: assessment.flagged_ingredients,
-        beneficial_ingredients: assessment.beneficial_ingredients,
-        unverified_ingredients: assessment.unverified_ingredients,
-      }])
+      .upsert(
+        [{
+          product_id: productId || null,
+          profile_id: userProfile.id,
+          safety_verdict: assessment.verdict,
+          safety_summary: assessment.summary,
+          flagged_ingredients: assessment.flagged_ingredients,
+          beneficial_ingredients: assessment.beneficial_ingredients,
+          unverified_ingredients: assessment.unverified_ingredients,
+        }],
+        { onConflict: 'product_id,profile_id' }
+      )
       .select('*')
       .single()
+
+    console.log('[Safety] Upsert done:', Date.now() - t0, 'ms')
 
     return res.status(200).json({
       source: 'claude',

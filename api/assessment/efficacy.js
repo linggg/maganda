@@ -1,41 +1,60 @@
 import Anthropic from '@anthropic-ai/sdk'
+import { createClient } from '@supabase/supabase-js'
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 })
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_KEY
+)
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { productName, brand, ingredients, skinConcern } = req.body
+  const { productId, profileId, productName, brand, ingredients, skinConcern } = req.body
 
   if (!ingredients || !skinConcern) {
     return res.status(400).json({ error: 'Ingredients and skin concern are required' })
   }
 
+  const isResolved = !!(productId && productName)
+  const canCache = !!(productId && profileId)
+
   try {
-    const searchQuery = productName
-      ? `${productName} ${brand || ''} review ${skinConcern}`
-      : null
+    // Cache check
+    if (canCache) {
+      const { data } = await supabase
+        .from('assessments')
+        .select('efficacy_results')
+        .eq('product_id', productId)
+        .eq('profile_id', profileId)
+        .maybeSingle()
+
+      if (data?.efficacy_results?.[skinConcern]) {
+        return res.status(200).json({ efficacy: data.efficacy_results[skinConcern], source: 'cache' })
+      }
+    }
 
     const response = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 1000,
-      tools: searchQuery ? [{ type: 'web_search_20250305', name: 'web_search' }] : [],
+      tools: isResolved ? [{ type: 'web_search_20250305', name: 'web_search' }] : [],
       messages: [
         {
           role: 'user',
           content: `You are a cosmetic efficacy analyst. Assess whether this product is likely to be effective for the user's specific concern.
 
 User concern: ${skinConcern}
-${searchQuery ? `Product: ${productName} by ${brand || 'unknown brand'}` : 'Unknown product'}
+${isResolved ? `Product: ${productName} by ${brand || 'unknown brand'}` : 'Ingredient list only — no product name available'}
 
 Ingredient list:
 ${ingredients}
 
-${searchQuery ? `Search for reviews of "${productName} ${brand || ''}" specifically mentioning ${skinConcern} to supplement your ingredient analysis.` : ''}
+${isResolved ? `Search for reviews of "${productName} ${brand || ''}" specifically mentioning ${skinConcern} to supplement your ingredient analysis.` : ''}
 
 Return ONLY a valid JSON object:
 {
@@ -56,9 +75,10 @@ Return ONLY a valid JSON object:
       "relevance": "high, medium, or low"
     }
   ],
-  "review_summary": "2-3 sentences summarising what real users report about this product specifically for ${skinConcern}. If no reviews found, say so honestly.",
-  "review_source": "source URL or null",
-  "signal_type": "ingredient_based, review_based, or combined"
+  ${isResolved ? `"review_summary": "2-3 sentences summarising what real users report about this product specifically for ${skinConcern}. If no reviews found, say so honestly.",
+  "review_source": "source URL or null",` : `"review_summary": null,
+  "review_source": null,`}
+  "signal_type": "${isResolved ? 'ingredient_based, review_based, or combined' : 'ingredient_based'}"
 }
 
 Rules:
@@ -88,6 +108,16 @@ try {
   console.error('Parse error, raw response:', textBlock.text)
   throw new Error('Failed to parse efficacy assessment')
 }
+
+    // Cache write — atomic JSONB merge so concurrent concern writes don't overwrite each other
+    if (canCache) {
+      await supabase.rpc('merge_efficacy_result', {
+        p_product_id: productId,
+        p_profile_id: profileId,
+        p_concern: skinConcern,
+        p_result: efficacy,
+      })
+    }
 
     return res.status(200).json({ efficacy })
 

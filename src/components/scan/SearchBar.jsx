@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function SearchBar({ onSearch, loading }) {
+export default function SearchBar({ onSearch, loading, initialValue = '' }) {
   const { t } = useTranslation()
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState(initialValue)
   const inputRef = useRef(null)
 
   function handleChange(e) {
@@ -33,7 +33,7 @@ export default function SearchBar({ onSearch, loading }) {
         type="text"
         value={query}
         onChange={handleChange}
-        placeholder={t('scan.search_placeholder')}
+        placeholder={t('check.search_placeholder')}
         className="w-full rounded-xl py-4 pl-12 pr-12 text-sm text-on-surface placeholder:text-outline/50 focus:outline-none focus:ring-2 transition-all"
         style={{ backgroundColor: '#ffffff', border: '2px solid #e1e3e2' }}
       />

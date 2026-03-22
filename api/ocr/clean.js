@@ -1,19 +1,31 @@
 import Anthropic from '@anthropic-ai/sdk'
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '20mb',
+    },
+  },
+}
+
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 })
+
+const VALID_MIME_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { rawText } = req.body
+  const { imageBase64, mimeType } = req.body
 
-  if (!rawText) {
-    return res.status(400).json({ error: 'Raw OCR text is required' })
+  if (!imageBase64) {
+    return res.status(400).json({ error: 'Image data is required' })
   }
+
+  const resolvedType = VALID_MIME_TYPES.includes(mimeType) ? mimeType : 'image/jpeg'
 
   try {
     const response = await anthropic.messages.create({
@@ -22,35 +34,48 @@ export default async function handler(req, res) {
       messages: [
         {
           role: 'user',
-          content: `The following text was extracted via OCR from a cosmetic product label. Clean it up.
+          content: [
+            {
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: resolvedType,
+                data: imageBase64,
+              },
+            },
+            {
+              type: 'text',
+              text: `This is a photo of a cosmetic product or its packaging. Extract as much useful information as possible.
 
-Raw OCR text:
-${rawText}
+There are two cases:
 
-Instructions:
-- Correct obvious OCR errors (e.g. "Niacinarnide" → "Niacinamide")
-- Standardise to INCI names where possible
+CASE 1 — The ingredient list is visible in the photo:
+- Extract all ingredients and standardise to INCI names where possible
 - Remove non-ingredient text (directions, warnings, batch numbers, marketing copy)
-- Join hyphenated line breaks
-- Return as a clean comma-separated ingredient list
+- Set "ingredients" to the clean comma-separated list
+- Set "confidence" based on how clearly you can read the text
 
-Also identify if visible in the text:
-- Product name
-- Brand name
-- Product type
+CASE 2 — The ingredient list is NOT visible, but the product itself is identifiable:
+- Read the product name and brand from the packaging
+- Set "ingredients" to null
+- Set "confidence" to "high" if you are confident in the product identity, "low" if not
+
+Always extract product_name, brand, and product_type whenever visible.
 
 Return ONLY a valid JSON object:
 {
-  "ingredients": "clean comma separated ingredient list",
+  "ingredients": "comma separated list, or null if not visible",
   "product_name": "product name or null",
   "brand": "brand name or null",
   "product_type": "product type or null",
   "confidence": "high, medium, or low"
 }
 
-Return only the JSON object, no other text.`
-        }
-      ]
+Return only the JSON object, no other text.`,
+            },
+          ],
+        },
+      ],
     })
 
     const textBlock = response.content.find(b => b.type === 'text')
@@ -61,13 +86,13 @@ Return only the JSON object, no other text.`
       const text = textBlock.text.replace(/```json|```/g, '').trim()
       cleaned = JSON.parse(text)
     } catch {
-      throw new Error('Failed to parse OCR cleanup response')
+      throw new Error('Failed to parse response')
     }
 
     return res.status(200).json({ cleaned })
 
   } catch (err) {
-    console.error('OCR clean error:', err)
-    return res.status(500).json({ error: 'Failed to clean OCR text' })
+    console.error('OCR extract error:', err)
+    return res.status(500).json({ error: 'Failed to extract ingredients from image' })
   }
 }

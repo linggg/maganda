@@ -1,10 +1,120 @@
 {
   "app": { "name": "Lingda" },
+  "reset_password": {
+    "title": "Tetapkan kata laluan baharu",
+    "subtitle": "Pilih kata laluan baharu untuk akaun anda",
+    "new_password_label": "Kata laluan baharu",
+    "confirm_password_label": "Sahkan kata laluan",
+    "submit": "Kemas kini kata laluan",
+    "success": "Kata laluan dikemas kini. Mengalihkan anda ke profil…",
+    "error_required": "Sila isi kedua-dua medan",
+    "error_mismatch": "Kata laluan tidak sepadan",
+    "error_too_short": "Kata laluan mestilah sekurang-kurangnya 6 aksara",
+    "error_generic": "Sesuatu telah berlaku. Sila cuba lagi."
+  },
   "nav": {
     "home": "Utama",
-    "scan": "Imbas",
+    "check": "Semak",
     "insights": "Analisis",
-    "saved": "Disimpan"
+    "saved": "Disimpan",
+    "profile": "Profil"
+  },
+  "profile": {
+    "title": "Profil",
+    "account_section": "Akaun",
+    "display_name_label": "Nama",
+    "display_name_placeholder": "Tambah nama anda",
+    "save": "Simpan",
+    "email_label": "E-mel",
+    "change_password": "Tukar kata laluan",
+    "password_sent": "Pautan tetapan semula dihantar ke e-mel anda",
+    "language_label": "Bahasa",
+    "completeness_section": "Profil anda",
+    "completeness_face": "Muka & kulit",
+    "completeness_scalp_hair": "Kulit kepala & rambut",
+    "completeness_body": "Badan",
+    "completeness_nails": "Kuku",
+    "completeness_notes": "Nota tambahan",
+    "completeness_add": "Tambah",
+    "edit_section": "Edit profil",
+    "danger_section": "Zon berbahaya",
+    "logout": "Log keluar",
+    "delete_account": "Padam akaun",
+    "delete_confirm_title": "Padam akaun anda?",
+    "delete_confirm_body": "Ini akan memadam semua data anda secara kekal. Taip \"delete my account\" untuk mengesahkan.",
+    "delete_confirm_placeholder": "delete my account",
+    "delete_confirm_button": "Padam secara kekal",
+    "cancel": "Batal"
+  },
+  "check": {
+    "title": "Cari Produk",
+    "search_placeholder": "Cari mengikut nama produk atau jenama...",
+    "no_results_title": "Tiada produk dijumpai",
+    "no_results_subtitle": "Cuba carian lain atau tampal senarai bahan",
+    "results_found": "keputusan",
+    "paste_label": "Atau tampal senarai bahan",
+    "paste_placeholder": "Tampal senarai bahan penuh di sini...",
+    "analyse_ingredients": "Analisis Bahan",
+    "analysing": "Menganalisis...",
+    "input_methods": "Bagaimana anda ingin menyemak produk?",
+    "method_search": "Cari mengikut nama",
+    "method_paste": "Tampal bahan",
+    "method_photo": "Ambil foto",
+    "ocr_subtitle": "Arahkan kamera ke panel bahan pada produk",
+    "ocr_select_photo": "Ambil foto atau muat naik dari galeri",
+    "ocr_take_photo": "Ambil foto",
+    "ocr_upload_gallery": "Muat naik dari galeri",
+    "ocr_reading": "Membaca imej…",
+    "ocr_identifying": "Mengenal pasti bahan…",
+    "ocr_confidence_high": "Keyakinan tinggi",
+    "ocr_confidence_medium": "Keyakinan sederhana",
+    "ocr_confidence_low": "Keyakinan rendah — sila semak senarai",
+    "ocr_ingredient_label": "Senarai bahan",
+    "ocr_confirm_button": "Semak keselamatan →",
+    "ocr_retry": "Cuba lagi",
+    "ocr_switch_paste": "Taip atau tampal sebaliknya",
+    "ocr_error_no_text": "Tidak dapat membaca imej ini dengan jelas",
+    "ocr_error_no_ingredients": "Tiada bahan dijumpai dalam imej ini",
+    "ocr_error_failed": "Tidak dapat memproses foto ini",
+    "ocr_error_too_large": "Imej terlalu besar — cuba foto yang lebih dekat",
+    "ocr_tip": "Petua: letakkan produk mendatar, pencahayaan baik, kamera selari dengan label",
+    "recent_title": "Terkini",
+    "see_all": "Lihat semua",
+    "ocr_no_ingredients_visible": "Senarai bahan tidak kelihatan dalam foto. Kami telah mengenal pasti produk — mahu cari bahannya?",
+    "ocr_search_ingredients": "Cari bahan →"
+  },
+  "nudge": {
+    "title": "Lengkapkan profil anda",
+    "subtitle": "Tambah nota untuk penilaian keselamatan yang lebih diperibadikan",
+    "cta": "Tambah nota",
+    "dismiss": "Abaikan",
+    "title_v2": "Perluas profil anda",
+    "subtitle_v2": "Tambah maklumat rambut, badan dan kuku untuk penilaian yang lebih tepat",
+    "cta_v2": "Tambah lagi"
+  },
+  "history": {
+    "title": "Sejarah Penilaian",
+    "empty": "Tiada penilaian lagi. Mulakan dengan menyemak produk.",
+    "search_placeholder": "Cari mengikut nama produk...",
+    "no_results": "Tiada keputusan untuk carian anda."
+  },
+  "saved": {
+    "title": "Disimpan",
+    "filter_liked": "Suka",
+    "filter_want_to_try": "Mahu cuba",
+    "filter_avoid": "Elak",
+    "empty_liked": "Belum ada yang disukai",
+    "empty_want_to_try": "Senarai mahu cuba masih kosong",
+    "empty_avoid": "Tiada produk ditandakan untuk dielak",
+    "empty_sub": "Pergi ke Semak untuk menilai produk"
+  },
+  "assessment": {
+    "verdict_title": "Pendapat anda",
+    "verdict_liked": "Suka",
+    "verdict_want_to_try": "Mahu cuba",
+    "verdict_avoid": "Elak",
+
+    "verdict_anonymous_note": "Cari mengikut nama produk untuk menyimpan penilaian ini."
   },
   "onboarding": {
     "step_of": "Langkah {{current}} daripada {{total}}",
@@ -107,6 +217,51 @@
           "thyroid": "Keadaan tiroid",
           "prefer_not": "Tidak mahu mendedahkan"
         }
+      },
+      "additional_notes": {
+        "title": "Ada lagi yang kami perlu tahu?",
+        "subtitle": "Alahan, keadaan kulit, sensitiviti — apa sahaja yang mempengaruhi apa yang anda sapukan pada kulit",
+        "placeholder": "cth: alahan lateks, ekzema, rosacea..."
+      },
+      "scalp_hair": {
+        "title": "Ceritakan tentang kulit kepala dan rambut anda",
+        "subtitle": "Membantu kami memperibadikan penilaian untuk produk rambut dan kulit kepala",
+        "scalp_label": "Jenis kulit kepala",
+        "hair_label": "Masalah rambut",
+        "scalp_options": {
+          "oily": "Berminyak",
+          "dry": "Kering",
+          "normal": "Normal",
+          "sensitive": "Sensitif"
+        },
+        "hair_options": {
+          "dandruff": "Kelemumur",
+          "thinning_loss": "Rambut nipis atau gugur",
+          "frizz": "Rambut kasar",
+          "dryness": "Kering",
+          "colour_treated": "Rambut diwarnai",
+          "chemically_treated": "Rawatan kimia (pelurus, keratin, perm)"
+        }
+      },
+      "body_skin": {
+        "title": "Ada masalah kulit badan?",
+        "subtitle": "Membantu menandai bahan berkaitan dalam produk badan",
+        "options": {
+          "dryness_eczema": "Kekeringan atau ekzema",
+          "keratosis_pilaris": "Keratosis pilaris",
+          "hyperpigmentation": "Hiperpigmentasi",
+          "sensitive_reactive": "Kulit sensitif atau mudah bertindak balas"
+        }
+      },
+      "nails": {
+        "title": "Ceritakan tentang kuku anda",
+        "subtitle": "Membantu menandai bahan berkaitan dalam produk kuku",
+        "options": {
+          "brittle": "Rapuh atau lemah",
+          "fungal_prone": "Mudah dijangkiti kulat",
+          "sensitive_cuticles": "Kutikula sensitif"
+        },
+        "chemical_exposure_label": "Saya kerap menggunakan gel, akrilik, atau dip powder"
       },
       "sun_exposure": {
         "title": "Berapa banyak pendedahan matahari yang anda dapat setiap hari?",

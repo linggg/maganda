@@ -2,13 +2,53 @@
   "app": {
     "name": "Lingda"
   },
+  "reset_password": {
+    "title": "Đặt mật khẩu mới",
+    "subtitle": "Chọn mật khẩu mới cho tài khoản của bạn",
+    "new_password_label": "Mật khẩu mới",
+    "confirm_password_label": "Xác nhận mật khẩu",
+    "submit": "Cập nhật mật khẩu",
+    "success": "Mật khẩu đã được cập nhật. Đang chuyển hướng đến hồ sơ của bạn…",
+    "error_required": "Vui lòng điền vào cả hai trường",
+    "error_mismatch": "Mật khẩu không khớp",
+    "error_too_short": "Mật khẩu phải có ít nhất 6 ký tự",
+    "error_generic": "Có lỗi xảy ra. Vui lòng thử lại."
+  },
   "nav": {
     "home": "Trang chủ",
-    "scan": "Quét",
+    "check": "Kiểm tra",
     "insights": "Phân tích",
-    "saved": "Đã lưu"
+    "saved": "Đã lưu",
+    "profile": "Hồ sơ"
   },
-  "scan": {
+  "profile": {
+    "title": "Hồ sơ",
+    "account_section": "Tài khoản",
+    "display_name_label": "Tên",
+    "display_name_placeholder": "Thêm tên của bạn",
+    "save": "Lưu",
+    "email_label": "Email",
+    "change_password": "Đổi mật khẩu",
+    "password_sent": "Đã gửi link đặt lại mật khẩu đến email của bạn",
+    "language_label": "Ngôn ngữ",
+    "completeness_section": "Hồ sơ của bạn",
+    "completeness_face": "Da mặt & da",
+    "completeness_scalp_hair": "Da đầu & tóc",
+    "completeness_body": "Cơ thể",
+    "completeness_nails": "Móng tay",
+    "completeness_notes": "Ghi chú thêm",
+    "completeness_add": "Thêm",
+    "edit_section": "Chỉnh sửa hồ sơ",
+    "danger_section": "Vùng nguy hiểm",
+    "logout": "Đăng xuất",
+    "delete_account": "Xoá tài khoản",
+    "delete_confirm_title": "Xoá tài khoản của bạn?",
+    "delete_confirm_body": "Thao tác này sẽ xoá vĩnh viễn tất cả dữ liệu của bạn. Nhập \"delete my account\" để xác nhận.",
+    "delete_confirm_placeholder": "delete my account",
+    "delete_confirm_button": "Xoá vĩnh viễn",
+    "cancel": "Huỷ"
+  },
+  "check": {
     "title": "Tìm sản phẩm",
     "search_placeholder": "Tìm theo tên sản phẩm hoặc thương hiệu...",
     "no_results_title": "Không tìm thấy sản phẩm",
@@ -17,11 +57,67 @@
     "paste_label": "Hoặc dán danh sách thành phần",
     "paste_placeholder": "Dán danh sách thành phần đầy đủ ở đây...",
     "analyse_ingredients": "Phân tích thành phần",
+    "analysing": "Đang phân tích...",
     "input_methods": "Bạn muốn kiểm tra sản phẩm như thế nào?",
     "method_search": "Tìm theo tên",
     "method_paste": "Dán thành phần",
-    "method_photo": "Chụp ảnh"
-    },
+    "method_photo": "Chụp ảnh",
+    "ocr_subtitle": "Hướng camera vào bảng thành phần trên sản phẩm",
+    "ocr_select_photo": "Chụp ảnh hoặc tải từ thư viện",
+    "ocr_take_photo": "Chụp ảnh",
+    "ocr_upload_gallery": "Tải từ thư viện",
+    "ocr_reading": "Đang đọc hình ảnh…",
+    "ocr_identifying": "Đang nhận diện thành phần…",
+    "ocr_confidence_high": "Độ tin cậy cao",
+    "ocr_confidence_medium": "Độ tin cậy trung bình",
+    "ocr_confidence_low": "Độ tin cậy thấp — vui lòng kiểm tra danh sách",
+    "ocr_ingredient_label": "Danh sách thành phần",
+    "ocr_confirm_button": "Kiểm tra an toàn →",
+    "ocr_retry": "Thử lại",
+    "ocr_switch_paste": "Gõ hoặc dán thay thế",
+    "ocr_error_no_text": "Không thể đọc hình ảnh này rõ ràng",
+    "ocr_error_no_ingredients": "Không tìm thấy thành phần trong hình ảnh này",
+    "ocr_error_failed": "Không thể xử lý ảnh này",
+    "ocr_error_too_large": "Ảnh quá lớn — thử chụp gần hơn",
+    "ocr_tip": "Mẹo: đặt sản phẩm phẳng, ánh sáng tốt, camera song song với nhãn",
+    "recent_title": "Gần đây",
+    "see_all": "Xem tất cả",
+    "ocr_no_ingredients_visible": "Danh sách thành phần không hiển thị trong ảnh. Chúng tôi đã nhận diện sản phẩm — bạn muốn tìm kiếm thành phần không?",
+    "ocr_search_ingredients": "Tìm thành phần →"
+  },
+  "nudge": {
+    "title": "Hoàn thiện hồ sơ của bạn",
+    "subtitle": "Thêm ghi chú để nhận đánh giá an toàn cá nhân hoá hơn",
+    "cta": "Thêm ghi chú",
+    "dismiss": "Bỏ qua",
+    "title_v2": "Mở rộng hồ sơ của bạn",
+    "subtitle_v2": "Thêm thông tin về tóc, cơ thể và móng để được đánh giá chính xác hơn",
+    "cta_v2": "Thêm thông tin"
+  },
+  "history": {
+    "title": "Lịch sử đánh giá",
+    "empty": "Chưa có đánh giá nào. Bắt đầu bằng cách kiểm tra một sản phẩm.",
+    "search_placeholder": "Tìm theo tên sản phẩm...",
+    "no_results": "Không có kết quả cho tìm kiếm của bạn."
+  },
+  "saved": {
+    "title": "Đã lưu",
+    "filter_liked": "Thích",
+    "filter_want_to_try": "Muốn thử",
+    "filter_avoid": "Tránh dùng",
+    "empty_liked": "Chưa có gì được thích",
+    "empty_want_to_try": "Danh sách muốn thử còn trống",
+    "empty_avoid": "Chưa có sản phẩm nào cần tránh",
+    "empty_sub": "Vào Kiểm tra để đánh giá sản phẩm"
+  },
+  "assessment": {
+    "verdict_title": "Đánh giá của bạn",
+    "verdict_liked": "Thích",
+    "verdict_want_to_try": "Muốn thử",
+    "verdict_avoid": "Tránh dùng",
+
+    "verdict_anonymous_note": "Tìm theo tên sản phẩm để lưu đánh giá này."
+  },
   "onboarding": {
     "step_of": "Bước {{current}} / {{total}}",
     "next": "Tiếp theo",
@@ -123,6 +219,51 @@
           "thyroid": "Bệnh tuyến giáp",
           "prefer_not": "Không muốn tiết lộ"
         }
+      },
+      "additional_notes": {
+        "title": "Còn điều gì chúng tôi nên biết không?",
+        "subtitle": "Dị ứng, tình trạng da, độ nhạy cảm — bất cứ điều gì ảnh hưởng đến việc bạn dùng gì lên da",
+        "placeholder": "ví dụ: dị ứng latex, chàm, rosacea..."
+      },
+      "scalp_hair": {
+        "title": "Cho chúng tôi biết về da đầu và tóc của bạn",
+        "subtitle": "Giúp cá nhân hoá đánh giá cho sản phẩm tóc và da đầu",
+        "scalp_label": "Loại da đầu",
+        "hair_label": "Vấn đề về tóc",
+        "scalp_options": {
+          "oily": "Dầu",
+          "dry": "Khô",
+          "normal": "Bình thường",
+          "sensitive": "Nhạy cảm"
+        },
+        "hair_options": {
+          "dandruff": "Gàu",
+          "thinning_loss": "Tóc mỏng hoặc rụng tóc",
+          "frizz": "Tóc xơ rối",
+          "dryness": "Khô",
+          "colour_treated": "Tóc nhuộm",
+          "chemically_treated": "Tóc xử lý hoá chất (duỗi, keratin, uốn)"
+        }
+      },
+      "body_skin": {
+        "title": "Vấn đề da cơ thể?",
+        "subtitle": "Giúp đánh dấu thành phần liên quan trong sản phẩm dưỡng thể",
+        "options": {
+          "dryness_eczema": "Khô hoặc chàm",
+          "keratosis_pilaris": "Viêm nang lông",
+          "hyperpigmentation": "Tăng sắc tố",
+          "sensitive_reactive": "Da nhạy cảm hoặc dễ kích ứng"
+        }
+      },
+      "nails": {
+        "title": "Cho chúng tôi biết về móng tay của bạn",
+        "subtitle": "Giúp đánh dấu thành phần liên quan trong sản phẩm móng",
+        "options": {
+          "brittle": "Giòn hoặc yếu",
+          "fungal_prone": "Dễ bị nấm",
+          "sensitive_cuticles": "Da quanh móng nhạy cảm"
+        },
+        "chemical_exposure_label": "Tôi thường xuyên sử dụng gel, acrylic hoặc dip powder"
       },
       "sun_exposure": {
         "title": "Bạn tiếp xúc với ánh nắng mặt trời bao nhiêu mỗi ngày?",

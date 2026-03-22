@@ -1,5 +1,5 @@
 {
-    "scan": {
+    "check": {
         "title": "Find a Product",
         "search_placeholder": "Search by product name or brand...",
         "no_results_title": "No products found",
@@ -8,19 +8,115 @@
         "paste_label": "Or paste ingredient list",
         "paste_placeholder": "Paste the full ingredient list here e.g. Water, Glycerin, Niacinamide...",
         "analyse_ingredients": "Analyse Ingredients",
+        "analysing": "Analysing...",
         "input_methods": "How would you like to check a product?",
         "method_search": "Search by name",
         "method_paste": "Paste ingredients",
-        "method_photo": "Take a photo"
-        },
+        "method_photo": "Take a photo",
+        "ocr_subtitle": "Point your camera at the ingredients panel on the product",
+        "ocr_select_photo": "Take a photo or upload from gallery",
+        "ocr_take_photo": "Take a photo",
+        "ocr_upload_gallery": "Upload from gallery",
+        "ocr_reading": "Reading image…",
+        "ocr_identifying": "Identifying ingredients…",
+        "ocr_confidence_high": "High confidence",
+        "ocr_confidence_medium": "Medium confidence",
+        "ocr_confidence_low": "Low confidence — please check the list",
+        "ocr_ingredient_label": "Ingredient list",
+        "ocr_confirm_button": "Check safety →",
+        "ocr_retry": "Try again",
+        "ocr_switch_paste": "Type or paste instead",
+        "ocr_error_no_text": "Couldn't read this image clearly",
+        "ocr_error_no_ingredients": "No ingredients found in this image",
+        "ocr_error_failed": "Couldn't process the photo",
+        "ocr_error_too_large": "Image too large — try a closer photo",
+        "ocr_tip": "Tip: lay the product flat, use good lighting, hold the camera parallel to the label",
+        "recent_title": "Recent",
+        "see_all": "See all",
+        "ocr_no_ingredients_visible": "Ingredient list wasn't visible in the photo. We identified the product — want to search for its ingredients?",
+        "ocr_search_ingredients": "Find ingredients →"
+    },
+  "nudge": {
+    "title": "Complete your profile",
+    "subtitle": "Add a note to get more personalised safety assessments",
+    "cta": "Add a note",
+    "dismiss": "Dismiss",
+    "title_v2": "Expand your profile",
+    "subtitle_v2": "Add hair, body, and nail info for more targeted assessments",
+    "cta_v2": "Add more"
+  },
+  "history": {
+    "title": "Assessment History",
+    "empty": "No assessments yet. Start by checking a product.",
+    "search_placeholder": "Search by product name...",
+    "no_results": "No results for your search."
+  },
+  "saved": {
+    "title": "Saved",
+    "filter_liked": "Liked",
+    "filter_want_to_try": "Want to try",
+    "filter_avoid": "Avoid",
+    "empty_liked": "Nothing liked yet",
+    "empty_want_to_try": "Nothing on your try list yet",
+    "empty_avoid": "No products marked to avoid",
+    "empty_sub": "Go to Check to assess a product"
+  },
+  "assessment": {
+    "verdict_title": "Your verdict",
+    "verdict_liked": "Liked",
+    "verdict_want_to_try": "Want to try",
+    "verdict_avoid": "Avoid",
+
+    "verdict_anonymous_note": "Search by product name to save this assessment."
+  },
   "app": {
     "name": "Lingda"
   },
+  "reset_password": {
+    "title": "Set new password",
+    "subtitle": "Choose a new password for your account",
+    "new_password_label": "New password",
+    "confirm_password_label": "Confirm password",
+    "submit": "Update password",
+    "success": "Password updated. Redirecting you to your profile…",
+    "error_required": "Please fill in both fields",
+    "error_mismatch": "Passwords don't match",
+    "error_too_short": "Password must be at least 6 characters",
+    "error_generic": "Something went wrong. Please try again."
+  },
   "nav": {
     "home": "Home",
-    "scan": "Scan",
+    "check": "Check",
     "insights": "Insights",
-    "saved": "Saved"
+    "saved": "Saved",
+    "profile": "Profile"
+  },
+  "profile": {
+    "title": "Profile",
+    "account_section": "Account",
+    "display_name_label": "Name",
+    "display_name_placeholder": "Add your name",
+    "save": "Save",
+    "email_label": "Email",
+    "change_password": "Change password",
+    "password_sent": "Reset link sent to your email",
+    "language_label": "Language",
+    "completeness_section": "Your profile",
+    "completeness_face": "Face & skin",
+    "completeness_scalp_hair": "Scalp & hair",
+    "completeness_body": "Body",
+    "completeness_nails": "Nails",
+    "completeness_notes": "Additional notes",
+    "completeness_add": "Add",
+    "edit_section": "Edit profile",
+    "danger_section": "Danger zone",
+    "logout": "Log out",
+    "delete_account": "Delete account",
+    "delete_confirm_title": "Delete your account?",
+    "delete_confirm_body": "This permanently deletes all your data. Type \"delete my account\" to confirm.",
+    "delete_confirm_placeholder": "delete my account",
+    "delete_confirm_button": "Delete permanently",
+    "cancel": "Cancel"
   },
   "onboarding": {
     "step_of": "Step {{current}} of {{total}}",
@@ -123,6 +219,51 @@
           "thyroid": "Thyroid condition",
           "prefer_not": "Prefer not to say"
         }
+      },
+      "additional_notes": {
+        "title": "Anything else we should know?",
+        "subtitle": "Allergies, conditions, sensitivities — anything that affects what you put on your skin",
+        "placeholder": "e.g. latex allergy, eczema, rosacea..."
+      },
+      "scalp_hair": {
+        "title": "Tell us about your scalp and hair",
+        "subtitle": "Helps us personalise assessments for hair and scalp products",
+        "scalp_label": "Scalp type",
+        "hair_label": "Hair concerns",
+        "scalp_options": {
+          "oily": "Oily",
+          "dry": "Dry",
+          "normal": "Normal",
+          "sensitive": "Sensitive"
+        },
+        "hair_options": {
+          "dandruff": "Dandruff",
+          "thinning_loss": "Thinning or hair loss",
+          "frizz": "Frizz",
+          "dryness": "Dryness",
+          "colour_treated": "Colour-treated",
+          "chemically_treated": "Chemically treated (relaxer, keratin, perm)"
+        }
+      },
+      "body_skin": {
+        "title": "Any body skin concerns?",
+        "subtitle": "Helps us flag relevant ingredients in body products",
+        "options": {
+          "dryness_eczema": "Dryness or eczema",
+          "keratosis_pilaris": "Keratosis pilaris",
+          "hyperpigmentation": "Hyperpigmentation",
+          "sensitive_reactive": "Sensitive or reactive skin"
+        }
+      },
+      "nails": {
+        "title": "Tell us about your nails",
+        "subtitle": "Helps us flag relevant ingredients in nail products",
+        "options": {
+          "brittle": "Brittle or weak",
+          "fungal_prone": "Fungal-prone",
+          "sensitive_cuticles": "Sensitive cuticles"
+        },
+        "chemical_exposure_label": "I regularly use gel, acrylic, or dip powder"
       },
       "sun_exposure": {
         "title": "How much sun exposure do you get daily?",

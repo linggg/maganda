@@ -12,6 +12,10 @@ import StepHormoneTherapy from '../components/onboarding/StepHormoneTherapy'
 import StepPregnancy from '../components/onboarding/StepPregnancy'
 import StepHormonalConditions from '../components/onboarding/StepHormonalConditions'
 import StepSunExposure from '../components/onboarding/StepSunExposure'
+import StepAdditionalNotes from '../components/onboarding/StepAdditionalNotes'
+import StepScalpHair from '../components/onboarding/StepScalpHair'
+import StepBodySkin from '../components/onboarding/StepBodySkin'
+import StepNails from '../components/onboarding/StepNails'
 
 const STEPS = [
   'skin_type',
@@ -23,6 +27,10 @@ const STEPS = [
   'pregnancy',
   'hormonal_conditions',
   'sun_exposure',
+  'additional_notes',
+  'scalp_hair',
+  'body_skin',
+  'nails',
 ]
 
 function shouldSkipStep(step, answers) {
@@ -50,6 +58,12 @@ export default function OnboardingScreen() {
     pregnancy: null,
     hormonal_conditions: [],
     sun_exposure: null,
+    additional_notes: '',
+    scalp_type: null,
+    hair_concerns: [],
+    body_concerns: [],
+    nail_concerns: [],
+    nail_chemical_exposure: false,
   })
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState(null)
@@ -81,15 +95,9 @@ export default function OnboardingScreen() {
   try {
     const { data: { user } } = await supabase.auth.getUser()
     
-    // Delete any existing profile for this user first
-    await supabase
-      .from('profiles')
-      .delete()
-      .eq('user_id', user.id)
-
     const { error: dbError } = await supabase
       .from('profiles')
-      .insert([{
+      .upsert({
         user_id: user.id,
         skin_type: answers.skin_type,
         skin_concerns: answers.skin_concerns,
@@ -100,8 +108,15 @@ export default function OnboardingScreen() {
         pregnancy_status: answers.pregnancy,
         hormonal_conditions: answers.hormonal_conditions,
         sun_exposure: answers.sun_exposure,
+        additional_notes: answers.additional_notes.trim() || null,
+        scalp_type: answers.scalp_type,
+        hair_concerns: answers.hair_concerns,
+        body_concerns: answers.body_concerns,
+        nail_concerns: answers.nail_concerns,
+        nail_chemical_exposure: answers.nail_chemical_exposure || null,
         onboarding_complete: true,
-      }])
+        profile_version: 3,
+      }, { onConflict: 'user_id' })
     if (dbError) throw dbError
     navigate('/home')
   } catch (err) {
@@ -115,14 +130,18 @@ export default function OnboardingScreen() {
   function canProceed() {
     switch (currentStep) {
       case 'skin_type': return !!answers.skin_type
-      case 'skin_concerns': return answers.skin_concerns.length > 0
+      case 'skin_concerns': return true
       case 'known_reactions': return !!answers.known_reactions
       case 'gender': return !!answers.gender
       case 'age': return !!answers.age
       case 'hormone_therapy': return !!answers.hormone_therapy
       case 'pregnancy': return !!answers.pregnancy
-      case 'hormonal_conditions': return answers.hormonal_conditions.length > 0
+      case 'hormonal_conditions': return true
       case 'sun_exposure': return !!answers.sun_exposure
+      case 'additional_notes': return true
+      case 'scalp_hair': return true
+      case 'body_skin': return true
+      case 'nails': return true
       default: return false
     }
   }
@@ -207,6 +226,28 @@ export default function OnboardingScreen() {
           )}
           {currentStep === 'sun_exposure' && (
             <StepSunExposure value={answers.sun_exposure} onChange={v => handleAnswer('sun_exposure', v)} />
+          )}
+          {currentStep === 'additional_notes' && (
+            <StepAdditionalNotes value={answers.additional_notes} onChange={v => handleAnswer('additional_notes', v)} />
+          )}
+          {currentStep === 'scalp_hair' && (
+            <StepScalpHair
+              scalpType={answers.scalp_type}
+              onScalpTypeChange={v => handleAnswer('scalp_type', v)}
+              hairConcerns={answers.hair_concerns}
+              onHairConcernsChange={v => handleAnswer('hair_concerns', v)}
+            />
+          )}
+          {currentStep === 'body_skin' && (
+            <StepBodySkin value={answers.body_concerns} onChange={v => handleAnswer('body_concerns', v)} />
+          )}
+          {currentStep === 'nails' && (
+            <StepNails
+              concerns={answers.nail_concerns}
+              onConcernsChange={v => handleAnswer('nail_concerns', v)}
+              chemicalExposure={answers.nail_chemical_exposure}
+              onChemicalExposureChange={v => handleAnswer('nail_chemical_exposure', v)}
+            />
           )}
         </div>
       </div>

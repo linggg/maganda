@@ -1,10 +1,120 @@
 {
   "app": { "name": "Lingda" },
+  "reset_password": {
+    "title": "Magtakda ng bagong password",
+    "subtitle": "Pumili ng bagong password para sa iyong account",
+    "new_password_label": "Bagong password",
+    "confirm_password_label": "Kumpirmahin ang password",
+    "submit": "I-update ang password",
+    "success": "Na-update ang password. Idinirekta ka sa iyong profile…",
+    "error_required": "Pakipunan ang parehong field",
+    "error_mismatch": "Hindi magkatugma ang mga password",
+    "error_too_short": "Ang password ay dapat na hindi bababa sa 6 na character",
+    "error_generic": "May nangyaring mali. Pakisubukan muli."
+  },
   "nav": {
     "home": "Home",
-    "scan": "Scan",
+    "check": "Suriin",
     "insights": "Insights",
-    "saved": "Saved"
+    "saved": "Saved",
+    "profile": "Profile"
+  },
+  "profile": {
+    "title": "Profile",
+    "account_section": "Account",
+    "display_name_label": "Pangalan",
+    "display_name_placeholder": "Idagdag ang iyong pangalan",
+    "save": "I-save",
+    "email_label": "Email",
+    "change_password": "Palitan ang password",
+    "password_sent": "Ipinadala ang reset link sa iyong email",
+    "language_label": "Wika",
+    "completeness_section": "Ang iyong profile",
+    "completeness_face": "Mukha at balat",
+    "completeness_scalp_hair": "Scalp at buhok",
+    "completeness_body": "Katawan",
+    "completeness_nails": "Kuko",
+    "completeness_notes": "Karagdagang tala",
+    "completeness_add": "Idagdag",
+    "edit_section": "I-edit ang profile",
+    "danger_section": "Danger zone",
+    "logout": "Mag-logout",
+    "delete_account": "Burahin ang account",
+    "delete_confirm_title": "Burahin ang iyong account?",
+    "delete_confirm_body": "Permanenteng mabubura ang lahat ng iyong data. I-type ang \"delete my account\" para kumpirmahin.",
+    "delete_confirm_placeholder": "delete my account",
+    "delete_confirm_button": "Burahin nang permanente",
+    "cancel": "Kanselahin"
+  },
+  "check": {
+    "title": "Maghanap ng Produkto",
+    "search_placeholder": "Maghanap ayon sa pangalan ng produkto o brand...",
+    "no_results_title": "Walang nahanap na produkto",
+    "no_results_subtitle": "Subukan ang ibang paghahanap o i-paste ang listahan ng sangkap",
+    "results_found": "mga resulta",
+    "paste_label": "O i-paste ang listahan ng sangkap",
+    "paste_placeholder": "I-paste ang buong listahan ng sangkap dito...",
+    "analyse_ingredients": "Suriin ang mga Sangkap",
+    "analysing": "Sinusuri...",
+    "input_methods": "Paano mo gustong suriin ang produkto?",
+    "method_search": "Maghanap ayon sa pangalan",
+    "method_paste": "I-paste ang mga sangkap",
+    "method_photo": "Kumuha ng larawan",
+    "ocr_subtitle": "Ituro ang camera sa panel ng mga sangkap ng produkto",
+    "ocr_select_photo": "Kumuha ng larawan o mag-upload mula sa galeri",
+    "ocr_take_photo": "Kumuha ng larawan",
+    "ocr_upload_gallery": "Mag-upload mula sa galeri",
+    "ocr_reading": "Binabasa ang imahe…",
+    "ocr_identifying": "Kinikilala ang mga sangkap…",
+    "ocr_confidence_high": "Mataas na kumpiyansa",
+    "ocr_confidence_medium": "Katamtamang kumpiyansa",
+    "ocr_confidence_low": "Mababang kumpiyansa — mangyaring suriin ang listahan",
+    "ocr_ingredient_label": "Listahan ng mga sangkap",
+    "ocr_confirm_button": "Suriin ang kaligtasan →",
+    "ocr_retry": "Subukan muli",
+    "ocr_switch_paste": "Mag-type o mag-paste na lang",
+    "ocr_error_no_text": "Hindi malinaw na nabasa ang larawang ito",
+    "ocr_error_no_ingredients": "Walang nahanap na sangkap sa larawang ito",
+    "ocr_error_failed": "Hindi maproseso ang larawang ito",
+    "ocr_error_too_large": "Masyadong malaki ang imahe — subukang kumuha ng mas malapit na larawan",
+    "ocr_tip": "Tip: ilagay nang patag ang produkto, magandang ilaw, camera na nakaharap sa label",
+    "recent_title": "Mga Nakaraang",
+    "see_all": "Tingnan lahat",
+    "ocr_no_ingredients_visible": "Hindi nakita ang listahan ng mga sangkap sa larawan. Nakilala namin ang produkto — gusto mo bang hanapin ang mga sangkap nito?",
+    "ocr_search_ingredients": "Hanapin ang mga sangkap →"
+  },
+  "history": {
+    "title": "Kasaysayan ng Pagtatasa",
+    "empty": "Wala pang mga pagtatasa. Magsimula sa pag-check ng produkto.",
+    "search_placeholder": "Maghanap ayon sa pangalan ng produkto...",
+    "no_results": "Walang resulta para sa iyong paghahanap."
+  },
+  "saved": {
+    "title": "Naka-save",
+    "filter_liked": "Nagustuhan",
+    "filter_want_to_try": "Gusto kong subukan",
+    "filter_avoid": "Iwasan",
+    "empty_liked": "Wala pang nagustuhan",
+    "empty_want_to_try": "Walang nasa listahan ng gustong subukan",
+    "empty_avoid": "Walang produktong minarkahan para iwasan",
+    "empty_sub": "Pumunta sa Suriin para suriin ang produkto"
+  },
+  "assessment": {
+    "verdict_title": "Ang iyong hatol",
+    "verdict_liked": "Nagustuhan",
+    "verdict_want_to_try": "Gusto kong subukan",
+    "verdict_avoid": "Iwasan",
+
+    "verdict_anonymous_note": "Maghanap ayon sa pangalan ng produkto para i-save ang assessment na ito."
+  },
+  "nudge": {
+    "title": "Kumpletuhin ang iyong profile",
+    "subtitle": "Magdagdag ng nota para sa mas personalisadong safety assessment",
+    "cta": "Magdagdag ng nota",
+    "dismiss": "Hindi ngayon",
+    "title_v2": "Palawakin ang iyong profile",
+    "subtitle_v2": "Magdagdag ng impormasyon sa buhok, katawan, at kuko para sa mas tumpak na assessment",
+    "cta_v2": "Magdagdag pa"
   },
   "onboarding": {
     "step_of": "Step {{current}} of {{total}}",
@@ -12,6 +122,53 @@
     "back": "Back",
     "finish": "Finish",
     "select_one": "Select one",
-    "select_all": "Select all that apply"
+    "select_all": "Select all that apply",
+    "steps": {
+      "additional_notes": {
+        "title": "May iba pa ba kaming dapat malaman?",
+        "subtitle": "Mga allergy, kondisyon, sensitivity — anumang nakakaapekto sa kung ano ang inilalagay mo sa iyong balat",
+        "placeholder": "hal. allergy sa latex, eczema, rosacea..."
+      },
+      "scalp_hair": {
+        "title": "Sabihin sa amin ang tungkol sa iyong scalp at buhok",
+        "subtitle": "Tumutulong sa amin na i-personalize ang mga assessment para sa hair at scalp products",
+        "scalp_label": "Uri ng scalp",
+        "hair_label": "Mga alalahanin sa buhok",
+        "scalp_options": {
+          "oily": "Malagkit",
+          "dry": "Tuyo",
+          "normal": "Normal",
+          "sensitive": "Sensitibo"
+        },
+        "hair_options": {
+          "dandruff": "Balakubak",
+          "thinning_loss": "Manipis o naglalaglag",
+          "frizz": "Magulo",
+          "dryness": "Tuyo",
+          "colour_treated": "May kulay",
+          "chemically_treated": "May chemical treatment (rebond, keratin, perm)"
+        }
+      },
+      "body_skin": {
+        "title": "May mga alalahanin sa balat ng katawan?",
+        "subtitle": "Tumutulong na itanda ang mga kaugnay na sangkap sa mga body product",
+        "options": {
+          "dryness_eczema": "Tuyong balat o eczema",
+          "keratosis_pilaris": "Keratosis pilaris",
+          "hyperpigmentation": "Hyperpigmentation",
+          "sensitive_reactive": "Sensitibo o madaling mag-react na balat"
+        }
+      },
+      "nails": {
+        "title": "Sabihin sa amin ang tungkol sa iyong mga kuko",
+        "subtitle": "Tumutulong na itanda ang mga kaugnay na sangkap sa mga nail product",
+        "options": {
+          "brittle": "Marupok o mahina",
+          "fungal_prone": "Madaling magka-fungal",
+          "sensitive_cuticles": "Sensitibong kutikula"
+        },
+        "chemical_exposure_label": "Regular akong gumagamit ng gel, acrylic, o dip powder"
+      }
+    }
   }
 }

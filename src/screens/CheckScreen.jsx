@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { parseIngredients } from '../lib/openbeautyfacts'
+import { useAuth } from '../context/AuthContext'
 import TopBar from '../components/TopBar'
 import SearchBar from '../components/scan/SearchBar'
 import SearchResults from '../components/scan/SearchResults'
 import PasteInput from '../components/scan/PasteInput'
 import PhotoInput from '../components/scan/PhotoInput'
+import RecentAssessments from '../components/check/RecentAssessments'
 
 const TABS = ['search', 'photo', 'paste']
 
@@ -17,9 +19,10 @@ const TAB_ICON = {
   paste: 'content_paste',
 }
 
-export default function ScanScreen() {
+export default function CheckScreen() {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  const { profile } = useAuth()
 
   const [activeTab, setActiveTab] = useState('search')
   const [query, setQuery] = useState('')
@@ -27,6 +30,7 @@ export default function ScanScreen() {
   const [searchKey, setSearchKey] = useState(0)
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const searchTimeout = useRef(null)
   const latestQuery = useRef('')
 
@@ -75,7 +79,15 @@ export default function ScanScreen() {
     })
   }
 
-  async function handleOCRProductFound(productName, brand) {
+  function handleOCRProductFound(productName, brand) {
+    const q = [productName, brand].filter(Boolean).join(' ')
+    setSearchInitialValue(q)
+    setSearchKey(k => k + 1)
+    setActiveTab('search')
+    handleSearch(q)
+  }
+
+  async function handleOCRProductFoundDirect(productName, brand) {
     const q = [productName, brand].filter(Boolean).join(' ')
     try {
       const res = await fetch('/api/product/resolve', {
@@ -92,18 +104,20 @@ export default function ScanScreen() {
     } catch {
       // fall through to search
     }
-    // Fallback: pre-fill search tab
     setSearchInitialValue(q)
     setSearchKey(k => k + 1)
     setActiveTab('search')
     handleSearch(q)
   }
 
-  async function handleOCRConfirm(text, productName, brand) {
+  function handleOCRConfirm(text, productName, brand) {
     const parsed = parseIngredients(text)
-    const { data: saved } = await supabase
+    const productId = crypto.randomUUID()
+    setSubmitting(true)
+    supabase
       .from('products')
       .insert([{
+        id: productId,
         name: productName || 'Scanned product',
         brand: brand || null,
         raw_ingredients: text,
@@ -111,12 +125,11 @@ export default function ScanScreen() {
         source: 'user_submitted',
         data_reliability: 'unverified',
       }])
-      .select('id')
-      .single()
-
-    navigate(`/assessment/${saved?.id}`, {
+      .then(() => {})
+      .catch(err => console.error('Background product insert failed:', err))
+    navigate(`/assessment/${productId}`, {
       state: {
-        productId: saved?.id,
+        productId,
         productName: productName || 'Scanned product',
         brand: brand || null,
         ingredients: text,
@@ -125,23 +138,25 @@ export default function ScanScreen() {
     })
   }
 
-  async function handlePasteSubmit(text) {
+  function handlePasteSubmit(text) {
     const parsed = parseIngredients(text)
-    const { data: saved } = await supabase
+    const productId = crypto.randomUUID()
+    setSubmitting(true)
+    supabase
       .from('products')
       .insert([{
+        id: productId,
         name: 'User submitted product',
         raw_ingredients: text,
         parsed_ingredients: parsed,
         source: 'user_submitted',
         data_reliability: 'unverified',
       }])
-      .select('id')
-      .single()
-
-    navigate(`/assessment/${saved?.id}`, {
+      .then(() => {})
+      .catch(err => console.error('Background product insert failed:', err))
+    navigate(`/assessment/${productId}`, {
       state: {
-        productId: saved?.id,
+        productId,
         productName: 'User submitted product',
         ingredients: text,
         parsed,
@@ -158,10 +173,10 @@ export default function ScanScreen() {
             className="text-xs font-bold tracking-widest uppercase mb-2 block"
             style={{ color: '#775259' }}
           >
-            {t('scan.input_methods')}
+            {t('check.input_methods')}
           </span>
           <h2 className="font-headline text-3xl font-extrabold text-on-surface tracking-tight">
-            {t('scan.title')}
+            {t('check.title')}
           </h2>
         </div>
 
@@ -183,7 +198,7 @@ export default function ScanScreen() {
               <span className="material-symbols-outlined text-base">
                 {TAB_ICON[tab]}
               </span>
-              {t(`scan.method_${tab}`)}
+              {t(`check.method_${tab}`)}
             </button>
           ))}
         </div>
@@ -191,6 +206,9 @@ export default function ScanScreen() {
         {activeTab === 'search' && (
           <div className="space-y-6">
             <SearchBar key={searchKey} initialValue={searchInitialValue} onSearch={handleSearch} loading={loading} />
+            {!query && profile?.id && (
+              <RecentAssessments profileId={profile.id} />
+            )}
             <SearchResults
               results={results}
               onSelect={handleProductSelect}
@@ -202,13 +220,14 @@ export default function ScanScreen() {
         {activeTab === 'photo' && (
           <PhotoInput
             onConfirm={handleOCRConfirm}
-            onProductFound={handleOCRProductFound}
+            onProductFound={handleOCRProductFoundDirect}
             onSwitchToPaste={() => setActiveTab('paste')}
+            submitting={submitting}
           />
         )}
 
         {activeTab === 'paste' && (
-          <PasteInput onSubmit={handlePasteSubmit} />
+          <PasteInput onSubmit={handlePasteSubmit} submitting={submitting} />
         )}
       </main>
     </div>

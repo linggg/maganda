@@ -1,10 +1,120 @@
 {
   "app": { "name": "Lingda" },
+  "reset_password": {
+    "title": "새 비밀번호 설정",
+    "subtitle": "계정의 새 비밀번호를 선택하세요",
+    "new_password_label": "새 비밀번호",
+    "confirm_password_label": "비밀번호 확인",
+    "submit": "비밀번호 업데이트",
+    "success": "비밀번호가 업데이트되었습니다. 프로필로 이동합니다…",
+    "error_required": "두 필드를 모두 입력해 주세요",
+    "error_mismatch": "비밀번호가 일치하지 않습니다",
+    "error_too_short": "비밀번호는 최소 6자 이상이어야 합니다",
+    "error_generic": "오류가 발생했습니다. 다시 시도해 주세요."
+  },
   "nav": {
     "home": "홈",
-    "scan": "스캔",
+    "check": "확인",
     "insights": "분석",
-    "saved": "저장됨"
+    "saved": "저장됨",
+    "profile": "프로필"
+  },
+  "profile": {
+    "title": "프로필",
+    "account_section": "계정",
+    "display_name_label": "이름",
+    "display_name_placeholder": "이름을 추가하세요",
+    "save": "저장",
+    "email_label": "이메일",
+    "change_password": "비밀번호 변경",
+    "password_sent": "재설정 링크가 이메일로 전송되었습니다",
+    "language_label": "언어",
+    "completeness_section": "내 프로필",
+    "completeness_face": "얼굴 & 피부",
+    "completeness_scalp_hair": "두피 & 모발",
+    "completeness_body": "바디",
+    "completeness_nails": "네일",
+    "completeness_notes": "추가 메모",
+    "completeness_add": "추가",
+    "edit_section": "프로필 편집",
+    "danger_section": "위험 구역",
+    "logout": "로그아웃",
+    "delete_account": "계정 삭제",
+    "delete_confirm_title": "계정을 삭제하시겠습니까?",
+    "delete_confirm_body": "모든 데이터가 영구적으로 삭제됩니다. 확인하려면 \"delete my account\"를 입력하세요.",
+    "delete_confirm_placeholder": "delete my account",
+    "delete_confirm_button": "영구 삭제",
+    "cancel": "취소"
+  },
+  "check": {
+    "title": "제품 찾기",
+    "search_placeholder": "제품명 또는 브랜드로 검색...",
+    "no_results_title": "제품을 찾을 수 없습니다",
+    "no_results_subtitle": "다른 검색어를 시도하거나 성분 목록을 붙여넣으세요",
+    "results_found": "개 결과",
+    "paste_label": "또는 성분 목록 붙여넣기",
+    "paste_placeholder": "여기에 전체 성분 목록을 붙여넣으세요...",
+    "analyse_ingredients": "성분 분석",
+    "analysing": "분석 중...",
+    "input_methods": "제품을 어떻게 확인하시겠습니까?",
+    "method_search": "이름으로 검색",
+    "method_paste": "성분 붙여넣기",
+    "method_photo": "사진 촬영",
+    "ocr_subtitle": "카메라를 제품의 성분 패널에 향하게 하세요",
+    "ocr_select_photo": "사진 촬영 또는 갤러리에서 업로드",
+    "ocr_take_photo": "사진 촬영",
+    "ocr_upload_gallery": "갤러리에서 업로드",
+    "ocr_reading": "이미지 읽는 중…",
+    "ocr_identifying": "성분 확인 중…",
+    "ocr_confidence_high": "높은 신뢰도",
+    "ocr_confidence_medium": "중간 신뢰도",
+    "ocr_confidence_low": "낮은 신뢰도 — 목록을 확인해 주세요",
+    "ocr_ingredient_label": "성분 목록",
+    "ocr_confirm_button": "안전 확인 →",
+    "ocr_retry": "다시 시도",
+    "ocr_switch_paste": "대신 입력 또는 붙여넣기",
+    "ocr_error_no_text": "이 이미지를 명확하게 읽을 수 없습니다",
+    "ocr_error_no_ingredients": "이 이미지에서 성분을 찾을 수 없습니다",
+    "ocr_error_failed": "사진을 처리할 수 없습니다",
+    "ocr_error_too_large": "이미지가 너무 큽니다 — 더 가까이서 촬영해 보세요",
+    "ocr_tip": "팁: 제품을 평평하게 놓고, 밝은 조명에서, 카메라를 라벨과 평행하게 유지하세요",
+    "recent_title": "최근",
+    "see_all": "모두 보기",
+    "ocr_no_ingredients_visible": "사진에서 성분 목록이 보이지 않았습니다. 제품은 확인되었습니다 — 성분을 검색할까요?",
+    "ocr_search_ingredients": "성분 찾기 →"
+  },
+  "nudge": {
+    "title": "프로필을 완성하세요",
+    "subtitle": "메모를 추가하면 더 맞춤화된 안전 평가를 받을 수 있어요",
+    "cta": "메모 추가",
+    "dismiss": "나중에",
+    "title_v2": "프로필을 확장하세요",
+    "subtitle_v2": "헤어, 바디, 네일 정보를 추가해 더 정확한 평가를 받으세요",
+    "cta_v2": "더 추가하기"
+  },
+  "history": {
+    "title": "평가 기록",
+    "empty": "아직 평가가 없습니다. 제품을 확인해 보세요.",
+    "search_placeholder": "제품명으로 검색...",
+    "no_results": "검색 결과가 없습니다."
+  },
+  "saved": {
+    "title": "저장됨",
+    "filter_liked": "마음에 들어요",
+    "filter_want_to_try": "써보고 싶어요",
+    "filter_avoid": "피하고 싶어요",
+    "empty_liked": "아직 마음에 드는 제품이 없어요",
+    "empty_want_to_try": "써보고 싶은 목록이 비어 있어요",
+    "empty_avoid": "피하고 싶은 제품이 없어요",
+    "empty_sub": "Check에서 제품을 평가해 보세요"
+  },
+  "assessment": {
+    "verdict_title": "내 평가",
+    "verdict_liked": "마음에 들어요",
+    "verdict_want_to_try": "써보고 싶어요",
+    "verdict_avoid": "피하고 싶어요",
+
+    "verdict_anonymous_note": "이 평가를 저장하려면 제품 이름으로 검색하세요."
   },
   "onboarding": {
     "step_of": "{{total}}단계 중 {{current}}단계",
@@ -107,6 +217,51 @@
           "thyroid": "갑상선 질환",
           "prefer_not": "밝히고 싶지 않음"
         }
+      },
+      "additional_notes": {
+        "title": "다른 알아야 할 사항이 있나요?",
+        "subtitle": "알레르기, 피부 상태, 민감성 — 피부에 바르는 것에 영향을 미치는 모든 것",
+        "placeholder": "예: 라텍스 알레르기, 습진, 주사비..."
+      },
+      "scalp_hair": {
+        "title": "두피와 모발에 대해 알려주세요",
+        "subtitle": "헤어 및 두피 제품 평가를 맞춤화하는 데 도움이 됩니다",
+        "scalp_label": "두피 타입",
+        "hair_label": "모발 고민",
+        "scalp_options": {
+          "oily": "지성",
+          "dry": "건성",
+          "normal": "정상",
+          "sensitive": "민감성"
+        },
+        "hair_options": {
+          "dandruff": "비듬",
+          "thinning_loss": "가늘어짐 또는 탈모",
+          "frizz": "곱슬거림",
+          "dryness": "건조함",
+          "colour_treated": "염색 모발",
+          "chemically_treated": "화학 처리 모발 (매직, 케라틴, 펌)"
+        }
+      },
+      "body_skin": {
+        "title": "신체 피부 고민이 있나요?",
+        "subtitle": "바디 제품의 관련 성분을 표시하는 데 도움이 됩니다",
+        "options": {
+          "dryness_eczema": "건조함 또는 습진",
+          "keratosis_pilaris": "모공각화증",
+          "hyperpigmentation": "색소침착",
+          "sensitive_reactive": "민감하거나 반응성 피부"
+        }
+      },
+      "nails": {
+        "title": "손톱에 대해 알려주세요",
+        "subtitle": "네일 제품의 관련 성분을 표시하는 데 도움이 됩니다",
+        "options": {
+          "brittle": "부서지거나 약한 손톱",
+          "fungal_prone": "곰팡이 감염 취약",
+          "sensitive_cuticles": "민감한 큐티클"
+        },
+        "chemical_exposure_label": "저는 젤, 아크릴, 또는 딥파우더를 자주 사용해요"
       },
       "sun_exposure": {
         "title": "하루에 햇빛에 얼마나 노출되시나요?",
