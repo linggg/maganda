@@ -188,7 +188,7 @@ export default function ProfileScreen() {
             </span>
             <select
               className="flex-1 text-sm text-on-surface bg-transparent focus:outline-none"
-              value={i18n.language}
+              value={i18n.resolvedLanguage}
               onChange={e => i18n.changeLanguage(e.target.value)}
             >
               {LANGUAGES.map(l => (
