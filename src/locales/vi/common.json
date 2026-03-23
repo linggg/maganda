@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "Lingda"
+    "name": "Maganda"
   },
   "reset_password": {
     "title": "Đặt mật khẩu mới",
@@ -102,19 +102,32 @@
   },
   "saved": {
     "title": "Đã lưu",
-    "filter_liked": "Thích",
-    "filter_want_to_try": "Muốn thử",
-    "filter_avoid": "Tránh dùng",
+    "filter_liked": "Yêu thích",
+    "filter_want_to_try": "Wishlist",
+    "filter_avoid": "Không hợp với tôi",
     "empty_liked": "Chưa có gì được thích",
     "empty_want_to_try": "Danh sách muốn thử còn trống",
     "empty_avoid": "Chưa có sản phẩm nào cần tránh",
     "empty_sub": "Vào Kiểm tra để đánh giá sản phẩm"
   },
+  "chat": {
+    "prompt_button": "Đặt câu hỏi về sản phẩm này",
+    "prompt_button_resume": "Tiếp tục cuộc trò chuyện",
+    "title": "Hỏi bất cứ điều gì",
+    "input_placeholder": "Hỏi bất cứ điều gì về sản phẩm này…",
+    "send": "Gửi",
+    "limit_reached": "Bạn đã đạt giới hạn câu hỏi cho sản phẩm này.",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "empty_hint": "Hỏi về thành phần, độ an toàn hoặc sản phẩm phù hợp với bạn như thế nào."
+  },
   "assessment": {
-    "verdict_title": "Đánh giá của bạn",
-    "verdict_liked": "Thích",
-    "verdict_want_to_try": "Muốn thử",
-    "verdict_avoid": "Tránh dùng",
+    "verdict_title": "Đánh dấu sản phẩm này?",
+    "verdict_liked": "Yêu thích",
+    "verdict_want_to_try": "Wishlist",
+    "verdict_avoid": "Không hợp với tôi",
+    "verdict_safe": "An toàn",
+    "verdict_caution": "Thận trọng",
+    "verdict_risk": "Rủi ro",
 
     "verdict_anonymous_note": "Tìm theo tên sản phẩm để lưu đánh giá này."
   },

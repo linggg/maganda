@@ -1,29 +1,34 @@
+import { useTranslation } from 'react-i18next'
+
 export default function SafetyVerdict({ verdict, summary }) {
+  const { t } = useTranslation()
+
   const config = {
     safe: {
-      label: 'Safe',
+      label: t('assessment.verdict_safe'),
       icon: 'check_circle',
       bg: '#ceeacf',
-      color: '#092010',
+      color: '#1a4d2e',
       iconColor: '#49624d',
     },
     caution: {
-      label: 'Caution',
+      label: t('assessment.verdict_caution'),
       icon: 'warning',
-      bg: '#ffd9de',
-      color: '#2e1319',
-      iconColor: '#775259',
+      bg: '#fef3c7',
+      color: '#92400e',
+      iconColor: '#92400e',
     },
-    alert: {
-      label: 'Alert',
+    avoid: {
+      label: t('assessment.verdict_risk'),
       icon: 'error',
       bg: '#ffdad6',
-      color: '#93000a',
+      color: '#ba1a1a',
       iconColor: '#ba1a1a',
     },
   }
 
-  const c = config[verdict] || config.safe
+  const v = (verdict || '').toLowerCase()
+  const c = config[v] || (v === 'alert' ? config.avoid : config.safe)
 
   return (
     <div

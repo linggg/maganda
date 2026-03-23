@@ -35,7 +35,7 @@ export default function StandaloneNotesScreen() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <div className="px-6 pt-6 pb-2">
-        <h1 className="font-headline text-primary text-2xl font-bold">Lingda</h1>
+        <h1 className="font-headline text-primary text-2xl font-bold">Maganda</h1>
       </div>
 
       <div className="flex-1 px-6 pt-4 pb-48 overflow-y-auto">

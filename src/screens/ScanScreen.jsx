@@ -130,7 +130,7 @@ export default function ScanScreen() {
     const { data: saved } = await supabase
       .from('products')
       .insert([{
-        name: 'User submitted product',
+        name: 'Ingredient Check',
         raw_ingredients: text,
         parsed_ingredients: parsed,
         source: 'user_submitted',
@@ -142,7 +142,7 @@ export default function ScanScreen() {
     navigate(`/assessment/${saved?.id}`, {
       state: {
         productId: saved?.id,
-        productName: 'User submitted product',
+        productName: 'Ingredient Check',
         ingredients: text,
         parsed,
       }

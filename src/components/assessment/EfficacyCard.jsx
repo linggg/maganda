@@ -1,23 +1,25 @@
 const verdictConfig = {
   likely_effective: {
     label: 'Likely Effective',
-    color: '#49624d',
+    color: '#1a4d2e',
     bg: '#ceeacf',
     bar: '#49624d',
   },
   possibly_effective: {
     label: 'Possibly Effective',
-    color: '#775259',
-    bg: '#ffd9de',
-    bar: '#775259',
+    color: '#92400e',
+    bg: '#fef3c7',
+    bar: '#d97706',
   },
   unlikely_effective: {
     label: 'Unlikely Effective',
-    color: '#737972',
-    bg: '#f2f4f3',
-    bar: '#c3c8c0',
+    color: '#ba1a1a',
+    bg: '#ffdad6',
+    bar: '#ba1a1a',
   },
 }
+
+const DEFAULT_VERDICT_CONFIG = verdictConfig.possibly_effective
 
 const concernLabels = {
   acne: 'Acne & Blemishes',
@@ -33,7 +35,7 @@ export default function EfficacyCard({ concern, efficacy, hasResolvedProduct }) 
   if (!efficacy) return null
 
   const verdict = efficacy.efficacy_verdict || 'unlikely_effective'
-  const c = verdictConfig[verdict] || verdictConfig.unlikely_effective
+  const c = verdictConfig[verdict] || DEFAULT_VERDICT_CONFIG
   const score = efficacy.efficacy_score || 0
   const verdictReason = efficacy.verdict_reason || ''
   const keyActives = efficacy.key_actives || []

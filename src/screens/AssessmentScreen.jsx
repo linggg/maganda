@@ -7,6 +7,7 @@ import FlaggedIngredient from '../components/assessment/FlaggedIngredient'
 import BeneficialIngredient from '../components/assessment/BeneficialIngredient'
 import EfficacyCard from '../components/assessment/EfficacyCard'
 import VerdictButtons from '../components/assessment/VerdictButtons'
+import AssessmentChat from '../components/assessment/AssessmentChat'
 
 export default function AssessmentScreen() {
   const { state } = useLocation()
@@ -15,7 +16,7 @@ export default function AssessmentScreen() {
   const { t } = useTranslation()
   const { profile } = useAuth()
 
-  const ANONYMOUS_NAMES = ['User submitted product', 'Scanned product']
+  const ANONYMOUS_NAMES = ['Ingredient Check', 'User submitted product', 'Scanned product']
   const hasResolvedProduct = !!(
     state?.productName &&
     !ANONYMOUS_NAMES.includes(state.productName)
@@ -43,8 +44,10 @@ export default function AssessmentScreen() {
     </div>
   )
 
+  const showChat = hasResolvedProduct && !safetyLoading && !!safety?.id
+
   return (
-    <div className="min-h-screen bg-background pb-12">
+    <div className={`min-h-screen bg-background ${showChat ? 'pb-28' : 'pb-12'}`}>
       <div
         className="sticky top-0 z-50 px-6 py-4 flex items-center gap-4"
         style={{ backgroundColor: '#f8faf9', borderBottom: '1px solid #e6e9e8' }}
@@ -136,15 +139,6 @@ export default function AssessmentScreen() {
           ) : null}
         </section>
 
-        {!safetyLoading && safety && (
-          hasResolvedProduct ? (
-            <VerdictButtons
-              assessmentId={safety.id}
-              initialVerdict={safety.user_verdict}
-            />
-          ) : null
-        )}
-
         <div style={{ borderTop: '1px solid #e6e9e8' }} />
 
         <section>
@@ -174,7 +168,15 @@ export default function AssessmentScreen() {
             </div>
           )}
         </section>
+        {!safetyLoading && safety && hasResolvedProduct && (
+          <VerdictButtons
+            assessmentId={safety.id}
+            initialVerdict={safety.user_verdict}
+          />
+        )}
       </div>
+
+      {showChat && <AssessmentChat assessment={safety} />}
     </div>
   )
 }

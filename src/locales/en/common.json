@@ -53,24 +53,37 @@
   },
   "saved": {
     "title": "Saved",
-    "filter_liked": "Liked",
-    "filter_want_to_try": "Want to try",
-    "filter_avoid": "Avoid",
+    "filter_liked": "Love it",
+    "filter_want_to_try": "Wishlist",
+    "filter_avoid": "Not for me",
     "empty_liked": "Nothing liked yet",
     "empty_want_to_try": "Nothing on your try list yet",
     "empty_avoid": "No products marked to avoid",
     "empty_sub": "Go to Check to assess a product"
   },
+  "chat": {
+    "prompt_button": "Ask a question about this product",
+    "prompt_button_resume": "Continue your conversation",
+    "title": "Ask anything",
+    "input_placeholder": "Ask anything about this product…",
+    "send": "Send",
+    "limit_reached": "You've reached the question limit for this product.",
+    "error": "Something went wrong. Please try again.",
+    "empty_hint": "Ask anything about the ingredients, safety, or how this product works for you."
+  },
   "assessment": {
-    "verdict_title": "Your verdict",
-    "verdict_liked": "Liked",
-    "verdict_want_to_try": "Want to try",
-    "verdict_avoid": "Avoid",
+    "verdict_title": "Bookmark this product?",
+    "verdict_liked": "Love it",
+    "verdict_want_to_try": "Wishlist",
+    "verdict_avoid": "Not for me",
+    "verdict_safe": "Safe",
+    "verdict_caution": "Caution",
+    "verdict_risk": "Risk",
 
     "verdict_anonymous_note": "Search by product name to save this assessment."
   },
   "app": {
-    "name": "Lingda"
+    "name": "Maganda"
   },
   "reset_password": {
     "title": "Set new password",

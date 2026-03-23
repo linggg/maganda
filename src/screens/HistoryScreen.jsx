@@ -4,23 +4,30 @@ import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../context/AuthContext'
 
-const ANONYMOUS_NAMES = ['User submitted product', 'Scanned product']
+const ANONYMOUS_NAMES = ['Ingredient Check', 'User submitted product', 'Scanned product']
+
+function isAnonymous(product) {
+  return !product?.name || ANONYMOUS_NAMES.includes(product.name)
+}
 
 function getDisplayName(product) {
-  if (!product) return 'Unknown product'
-  if (!product.name || ANONYMOUS_NAMES.includes(product.name)) {
-    const raw = product.raw_ingredients || ''
-    const first3 = raw.split(',').slice(0, 3).map(s => s.trim()).filter(Boolean).join(', ')
-    if (!first3) return 'Unknown product'
-    return first3.length > 40 ? first3.slice(0, 40) + '…' : first3 + '…'
-  }
+  if (!product) return 'Ingredient Check'
+  if (isAnonymous(product)) return 'Ingredient Check'
   return product.name
 }
 
+function getIngredientSubtitle(product) {
+  if (!isAnonymous(product)) return null
+  const raw = product?.raw_ingredients || ''
+  const first3 = raw.split(',').slice(0, 3).map(s => s.trim()).filter(Boolean).join(', ')
+  if (!first3) return null
+  return first3.length > 40 ? first3.slice(0, 40) + '…' : first3 + '…'
+}
+
 const SAFETY_COLORS = {
-  safe: { bg: '#ceeacf', text: '#1a4d1e' },
-  caution: { bg: '#ffd9de', text: '#93000a' },
-  avoid: { bg: '#ffdad6', text: '#93000a' },
+  safe: { bg: '#ceeacf', text: '#1a4d2e' },
+  caution: { bg: '#fef3c7', text: '#92400e' },
+  avoid: { bg: '#ffdad6', text: '#ba1a1a' },
 }
 
 function safetyStyle(verdict) {
@@ -28,6 +35,13 @@ function safetyStyle(verdict) {
   if (v === 'safe') return SAFETY_COLORS.safe
   if (v === 'caution' || v === 'moderate') return SAFETY_COLORS.caution
   return SAFETY_COLORS.avoid
+}
+
+function safetyLabel(verdict, t) {
+  const v = (verdict || '').toLowerCase()
+  if (v === 'safe') return t('assessment.verdict_safe')
+  if (v === 'caution' || v === 'moderate') return t('assessment.verdict_caution')
+  return t('assessment.verdict_risk')
 }
 
 const USER_VERDICT_CONFIG = {
@@ -96,7 +110,7 @@ export default function HistoryScreen() {
     navigate(`/assessment/${product.id}`, {
       state: {
         productId: product.id,
-        productName: product.name,
+        productName: isAnonymous(product) ? 'Ingredient Check' : product.name,
         brand: product.brand,
         ingredients: product.raw_ingredients || '',
         parsed: product.parsed_ingredients || [],
@@ -176,8 +190,10 @@ export default function HistoryScreen() {
                     <p className="text-sm font-semibold text-on-surface truncate">
                       {getDisplayName(product)}
                     </p>
-                    <p className="text-xs text-on-surface-variant">
-                      {product?.brand ? `${product.brand} · ` : ''}{formatDate(item.created_at)}
+                    <p className="text-xs text-on-surface-variant truncate">
+                      {getIngredientSubtitle(product)
+                        ? `${getIngredientSubtitle(product)} · ${formatDate(item.created_at)}`
+                        : `${product?.brand ? `${product.brand} · ` : ''}${formatDate(item.created_at)}`}
                     </p>
                   </div>
                   <div className="flex items-center gap-1.5 flex-shrink-0">
@@ -191,10 +207,10 @@ export default function HistoryScreen() {
                     )}
                     {item.safety_verdict && (
                       <span
-                        className="text-xs font-bold px-2.5 py-1 rounded-full capitalize"
+                        className="text-xs font-bold px-2.5 py-1 rounded-full"
                         style={{ backgroundColor: sStyle.bg, color: sStyle.text }}
                       >
-                        {item.safety_verdict}
+                        {safetyLabel(item.safety_verdict, t)}
                       </span>
                     )}
                   </div>

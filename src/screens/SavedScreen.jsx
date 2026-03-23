@@ -7,6 +7,7 @@ import TopBar from '../components/TopBar'
 import SavedCard from '../components/saved/SavedCard'
 
 const FILTERS = ['liked', 'want_to_try', 'avoid']
+const ANONYMOUS_NAMES = ['Ingredient Check', 'User submitted product', 'Scanned product']
 
 export default function SavedScreen() {
   const { t } = useTranslation()
@@ -39,7 +40,7 @@ export default function SavedScreen() {
     navigate(`/assessment/${product.id}`, {
       state: {
         productId: product.id,
-        productName: product.name,
+        productName: ANONYMOUS_NAMES.includes(product.name) ? 'Ingredient Check' : product.name,
         brand: product.brand,
         ingredients: product.raw_ingredients || '',
         parsed: product.parsed_ingredients || [],

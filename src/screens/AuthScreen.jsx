@@ -60,7 +60,7 @@ export default function AuthScreen() {
       <div className="px-6 pt-8 pb-12">
         <h1 className="font-headline text-4xl font-extrabold tracking-tight mb-2"
           style={{ color: '#49624d' }}>
-          Lingda
+          Maganda
         </h1>
         <p className="text-sm text-on-surface-variant">
           Know what you put on your body.

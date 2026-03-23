@@ -1,5 +1,5 @@
 {
-  "app": { "name": "Lingda" },
+  "app": { "name": "Maganda" },
   "reset_password": {
     "title": "ตั้งรหัสผ่านใหม่",
     "subtitle": "เลือกรหัสผ่านใหม่สำหรับบัญชีของคุณ",
@@ -91,19 +91,32 @@
   },
   "saved": {
     "title": "บันทึกแล้ว",
-    "filter_liked": "ชอบ",
-    "filter_want_to_try": "อยากลอง",
-    "filter_avoid": "หลีกเลี่ยง",
+    "filter_liked": "ถูกใจมาก",
+    "filter_want_to_try": "Wishlist",
+    "filter_avoid": "ไม่เหมาะกับฉัน",
     "empty_liked": "ยังไม่มีรายการที่ชอบ",
     "empty_want_to_try": "รายการอยากลองยังว่างอยู่",
     "empty_avoid": "ไม่มีผลิตภัณฑ์ที่ถูกทำเครื่องหมายให้หลีกเลี่ยง",
     "empty_sub": "ไปที่ตรวจสอบเพื่อประเมินผลิตภัณฑ์"
   },
+  "chat": {
+    "prompt_button": "ถามคำถามเกี่ยวกับผลิตภัณฑ์นี้",
+    "prompt_button_resume": "สนทนาต่อ",
+    "title": "ถามอะไรก็ได้",
+    "input_placeholder": "ถามอะไรก็ได้เกี่ยวกับผลิตภัณฑ์นี้…",
+    "send": "ส่ง",
+    "limit_reached": "คุณถึงขีดจำกัดคำถามสำหรับผลิตภัณฑ์นี้แล้ว",
+    "error": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
+    "empty_hint": "ถามเกี่ยวกับส่วนผสม ความปลอดภัย หรือผลิตภัณฑ์นี้เหมาะกับคุณอย่างไร"
+  },
   "assessment": {
-    "verdict_title": "ความคิดเห็นของคุณ",
-    "verdict_liked": "ชอบ",
-    "verdict_want_to_try": "อยากลอง",
-    "verdict_avoid": "หลีกเลี่ยง",
+    "verdict_title": "บันทึกผลิตภัณฑ์นี้?",
+    "verdict_liked": "ถูกใจมาก",
+    "verdict_want_to_try": "Wishlist",
+    "verdict_avoid": "ไม่เหมาะกับฉัน",
+    "verdict_safe": "ปลอดภัย",
+    "verdict_caution": "ระวัง",
+    "verdict_risk": "มีความเสี่ยง",
 
     "verdict_anonymous_note": "ค้นหาตามชื่อผลิตภัณฑ์เพื่อบันทึกการประเมินนี้"
   },

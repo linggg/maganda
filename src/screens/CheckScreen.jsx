@@ -146,7 +146,7 @@ export default function CheckScreen() {
       .from('products')
       .insert([{
         id: productId,
-        name: 'User submitted product',
+        name: 'Ingredient Check',
         raw_ingredients: text,
         parsed_ingredients: parsed,
         source: 'user_submitted',
@@ -157,7 +157,7 @@ export default function CheckScreen() {
     navigate(`/assessment/${productId}`, {
       state: {
         productId,
-        productName: 'User submitted product',
+        productName: 'Ingredient Check',
         ingredients: text,
         parsed,
       }

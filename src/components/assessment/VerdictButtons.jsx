@@ -30,7 +30,7 @@ export default function VerdictButtons({ assessmentId, initialVerdict }) {
   }
 
   return (
-    <div>
+    <div className="rounded-2xl p-5" style={{ backgroundColor: '#617b6542' }}>
       <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">
         {t('assessment.verdict_title')}
       </p>
@@ -42,11 +42,11 @@ export default function VerdictButtons({ assessmentId, initialVerdict }) {
               key={key}
               onClick={() => handleSelect(key)}
               disabled={saving}
-              className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all active:scale-95"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all active:scale-95"
               style={
                 isActive
                   ? { backgroundColor: '#617b65', color: '#ffffff' }
-                  : { backgroundColor: '#eceeed', color: '#3c4d3f' }
+                  : { backgroundColor: '#ffffff', color: '#3c4d3f' }
               }
             >
               <span>{emoji}</span>

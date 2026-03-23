@@ -168,7 +168,7 @@ export default function OnboardingScreen() {
 
       {/* Header */}
       <div className="px-6 pt-4 pb-2">
-        <h1 className="font-headline text-primary text-2xl font-bold mb-4">Lingda</h1>
+        <h1 className="font-headline text-primary text-2xl font-bold mb-4">Maganda</h1>
         <div className="flex items-center gap-3 mb-1">
           <div
             className="flex-1 h-1.5 rounded-full overflow-hidden"

@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const VERDICT_COLORS = {
-  safe: { bg: '#ceeacf', text: '#1a4d1e' },
-  caution: { bg: '#ffd9de', text: '#93000a' },
-  avoid: { bg: '#ffdad6', text: '#93000a' },
+  safe: { bg: '#ceeacf', text: '#1a4d2e' },
+  caution: { bg: '#fef3c7', text: '#92400e' },
+  avoid: { bg: '#ffdad6', text: '#ba1a1a' },
 }
 
 function verdictStyle(verdict) {
@@ -11,6 +13,13 @@ function verdictStyle(verdict) {
   return VERDICT_COLORS.avoid
 }
 
+function verdictLabel(verdict, t) {
+  const v = (verdict || '').toLowerCase()
+  if (v === 'safe') return t('assessment.verdict_safe')
+  if (v === 'caution' || v === 'moderate') return t('assessment.verdict_caution')
+  return t('assessment.verdict_risk')
+}
+
 function formatDate(iso) {
   if (!iso) return ''
   const d = new Date(iso)
@@ -18,6 +27,7 @@ function formatDate(iso) {
 }
 
 export default function SavedCard({ item, onClick }) {
+  const { t } = useTranslation()
   const product = item.products
   const style = verdictStyle(item.safety_verdict)
 
@@ -46,10 +56,10 @@ export default function SavedCard({ item, onClick }) {
       </div>
       {item.safety_verdict && (
         <span
-          className="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 capitalize"
+          className="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0"
           style={{ backgroundColor: style.bg, color: style.text }}
         >
-          {item.safety_verdict}
+          {verdictLabel(item.safety_verdict, t)}
         </span>
       )}
     </button>

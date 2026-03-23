@@ -4,7 +4,7 @@ export default function TopBar() {
       <button className="hover:bg-surface-container transition-colors p-2 rounded-full flex items-center justify-center">
         <span className="material-symbols-outlined text-primary">search</span>
       </button>
-      <h1 className="font-headline text-primary text-xl tracking-tight font-bold">Lingda</h1>
+      <h1 className="font-headline text-primary text-xl tracking-tight font-bold">Maganda</h1>
       <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
         <span className="material-symbols-outlined text-primary text-sm">person</span>
       </div>

@@ -1,5 +1,5 @@
 {
-  "app": { "name": "Lingda" },
+  "app": { "name": "Maganda" },
   "reset_password": {
     "title": "Magtakda ng bagong password",
     "subtitle": "Pumili ng bagong password para sa iyong account",
@@ -91,19 +91,32 @@
   },
   "saved": {
     "title": "Naka-save",
-    "filter_liked": "Nagustuhan",
-    "filter_want_to_try": "Gusto kong subukan",
-    "filter_avoid": "Iwasan",
+    "filter_liked": "Love it",
+    "filter_want_to_try": "Wishlist",
+    "filter_avoid": "Hindi para sa akin",
     "empty_liked": "Wala pang nagustuhan",
     "empty_want_to_try": "Walang nasa listahan ng gustong subukan",
     "empty_avoid": "Walang produktong minarkahan para iwasan",
     "empty_sub": "Pumunta sa Suriin para suriin ang produkto"
   },
+  "chat": {
+    "prompt_button": "Magtanong tungkol sa produktong ito",
+    "prompt_button_resume": "Ipagpatuloy ang pag-uusap",
+    "title": "Tanungin ang kahit ano",
+    "input_placeholder": "Tanungin ang kahit ano tungkol sa produktong ito…",
+    "send": "Ipadala",
+    "limit_reached": "Naabot mo na ang limitasyon ng tanong para sa produktong ito.",
+    "error": "May nangyaring mali. Pakisubukan muli.",
+    "empty_hint": "Tanungin ang tungkol sa mga sangkap, kaligtasan, o kung paano angkop ang produktong ito para sa iyo."
+  },
   "assessment": {
-    "verdict_title": "Ang iyong hatol",
-    "verdict_liked": "Nagustuhan",
-    "verdict_want_to_try": "Gusto kong subukan",
-    "verdict_avoid": "Iwasan",
+    "verdict_title": "I-bookmark ang produktong ito?",
+    "verdict_liked": "Love it",
+    "verdict_want_to_try": "Wishlist",
+    "verdict_avoid": "Hindi para sa akin",
+    "verdict_safe": "Ligtas",
+    "verdict_caution": "Mag-ingat",
+    "verdict_risk": "Panganib",
 
     "verdict_anonymous_note": "Maghanap ayon sa pangalan ng produkto para i-save ang assessment na ito."
   },

@@ -3,23 +3,30 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../../lib/supabase'
 
-const ANONYMOUS_NAMES = ['User submitted product', 'Scanned product']
+const ANONYMOUS_NAMES = ['Ingredient Check', 'User submitted product', 'Scanned product']
+
+function isAnonymous(product) {
+  return !product?.name || ANONYMOUS_NAMES.includes(product.name)
+}
 
 function getDisplayName(product) {
-  if (!product) return 'Unknown product'
-  if (!product.name || ANONYMOUS_NAMES.includes(product.name)) {
-    const raw = product.raw_ingredients || ''
-    const first3 = raw.split(',').slice(0, 3).map(s => s.trim()).filter(Boolean).join(', ')
-    if (!first3) return 'Unknown product'
-    return first3.length > 40 ? first3.slice(0, 40) + '…' : first3 + '…'
-  }
+  if (!product) return 'Ingredient Check'
+  if (isAnonymous(product)) return 'Ingredient Check'
   return product.name
 }
 
+function getIngredientSubtitle(product) {
+  if (!isAnonymous(product)) return null
+  const raw = product?.raw_ingredients || ''
+  const first3 = raw.split(',').slice(0, 3).map(s => s.trim()).filter(Boolean).join(', ')
+  if (!first3) return null
+  return first3.length > 40 ? first3.slice(0, 40) + '…' : first3 + '…'
+}
+
 const VERDICT_COLORS = {
-  safe: { bg: '#ceeacf', text: '#1a4d1e' },
-  caution: { bg: '#ffd9de', text: '#93000a' },
-  avoid: { bg: '#ffdad6', text: '#93000a' },
+  safe: { bg: '#ceeacf', text: '#1a4d2e' },
+  caution: { bg: '#fef3c7', text: '#92400e' },
+  avoid: { bg: '#ffdad6', text: '#ba1a1a' },
 }
 
 function verdictStyle(verdict) {
@@ -27,6 +34,13 @@ function verdictStyle(verdict) {
   if (v === 'safe') return VERDICT_COLORS.safe
   if (v === 'caution' || v === 'moderate') return VERDICT_COLORS.caution
   return VERDICT_COLORS.avoid
+}
+
+function verdictLabel(verdict, t) {
+  const v = (verdict || '').toLowerCase()
+  if (v === 'safe') return t('assessment.verdict_safe')
+  if (v === 'caution' || v === 'moderate') return t('assessment.verdict_caution')
+  return t('assessment.verdict_risk')
 }
 
 function formatDate(iso) {
@@ -90,7 +104,7 @@ export default function RecentAssessments({ profileId }) {
     navigate(`/assessment/${product.id}`, {
       state: {
         productId: product.id,
-        productName: product.name,
+        productName: isAnonymous(product) ? 'Ingredient Check' : product.name,
         brand: product.brand,
         ingredients: product.raw_ingredients || '',
         parsed: product.parsed_ingredients || [],
@@ -132,16 +146,18 @@ export default function RecentAssessments({ profileId }) {
                     <p className="text-sm font-semibold text-on-surface truncate">
                       {getDisplayName(product)}
                     </p>
-                    <p className="text-xs text-on-surface-variant">
-                      {product?.brand ? `${product.brand} · ` : ''}{formatDate(item.created_at)}
+                    <p className="text-xs text-on-surface-variant truncate">
+                      {getIngredientSubtitle(product)
+                        ? `${getIngredientSubtitle(product)} · ${formatDate(item.created_at)}`
+                        : `${product?.brand ? `${product.brand} · ` : ''}${formatDate(item.created_at)}`}
                     </p>
                   </div>
                   {item.safety_verdict && (
                     <span
-                      className="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 capitalize"
+                      className="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0"
                       style={{ backgroundColor: style.bg, color: style.text }}
                     >
-                      {item.safety_verdict}
+                      {verdictLabel(item.safety_verdict, t)}
                     </span>
                   )}
                 </button>

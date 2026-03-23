@@ -50,7 +50,7 @@ export default function ResetPasswordScreen() {
           className="font-headline text-4xl font-extrabold tracking-tight mb-2"
           style={{ color: '#49624d' }}
         >
-          Lingda
+          Maganda
         </h1>
       </div>
 

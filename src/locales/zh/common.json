@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "Lingda"
+    "name": "Maganda"
   },
   "reset_password": {
     "title": "设置新密码",
@@ -102,19 +102,32 @@
   },
   "saved": {
     "title": "已保存",
-    "filter_liked": "喜欢",
-    "filter_want_to_try": "想试试",
-    "filter_avoid": "避免使用",
+    "filter_liked": "太爱了",
+    "filter_want_to_try": "Wishlist",
+    "filter_avoid": "不适合我",
     "empty_liked": "还没有喜欢的产品",
     "empty_want_to_try": "试用列表还是空的",
     "empty_avoid": "没有标记为避免的产品",
     "empty_sub": "前往检查以评估产品"
   },
+  "chat": {
+    "prompt_button": "询问关于此产品的问题",
+    "prompt_button_resume": "继续对话",
+    "title": "随时提问",
+    "input_placeholder": "随时询问关于此产品的问题…",
+    "send": "发送",
+    "limit_reached": "您已达到此产品的提问上限。",
+    "error": "出现错误，请重试。",
+    "empty_hint": "询问关于成分、安全性或此产品如何适合您的问题。"
+  },
   "assessment": {
-    "verdict_title": "您的评价",
-    "verdict_liked": "喜欢",
-    "verdict_want_to_try": "想试试",
-    "verdict_avoid": "避免使用",
+    "verdict_title": "收藏此产品？",
+    "verdict_liked": "太爱了",
+    "verdict_want_to_try": "Wishlist",
+    "verdict_avoid": "不适合我",
+    "verdict_safe": "安全",
+    "verdict_caution": "注意",
+    "verdict_risk": "风险",
 
     "verdict_anonymous_note": "按产品名称搜索以保存此评估。"
   },

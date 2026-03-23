@@ -1,5 +1,5 @@
 {
-  "app": { "name": "Lingda" },
+  "app": { "name": "Maganda" },
   "reset_password": {
     "title": "Tetapkan kata laluan baharu",
     "subtitle": "Pilih kata laluan baharu untuk akaun anda",
@@ -100,19 +100,32 @@
   },
   "saved": {
     "title": "Disimpan",
-    "filter_liked": "Suka",
-    "filter_want_to_try": "Mahu cuba",
-    "filter_avoid": "Elak",
+    "filter_liked": "Suka sangat",
+    "filter_want_to_try": "Wishlist",
+    "filter_avoid": "Bukan untuk saya",
     "empty_liked": "Belum ada yang disukai",
     "empty_want_to_try": "Senarai mahu cuba masih kosong",
     "empty_avoid": "Tiada produk ditandakan untuk dielak",
     "empty_sub": "Pergi ke Semak untuk menilai produk"
   },
+  "chat": {
+    "prompt_button": "Tanya soalan tentang produk ini",
+    "prompt_button_resume": "Teruskan perbualan",
+    "title": "Tanya apa sahaja",
+    "input_placeholder": "Tanya apa sahaja tentang produk ini…",
+    "send": "Hantar",
+    "limit_reached": "Anda telah mencapai had soalan untuk produk ini.",
+    "error": "Sesuatu telah berlaku. Sila cuba lagi.",
+    "empty_hint": "Tanya tentang bahan, keselamatan atau cara produk ini sesuai untuk anda."
+  },
   "assessment": {
-    "verdict_title": "Pendapat anda",
-    "verdict_liked": "Suka",
-    "verdict_want_to_try": "Mahu cuba",
-    "verdict_avoid": "Elak",
+    "verdict_title": "Tandai produk ini?",
+    "verdict_liked": "Suka sangat",
+    "verdict_want_to_try": "Wishlist",
+    "verdict_avoid": "Bukan untuk saya",
+    "verdict_safe": "Selamat",
+    "verdict_caution": "Berhati-hati",
+    "verdict_risk": "Risiko",
 
     "verdict_anonymous_note": "Cari mengikut nama produk untuk menyimpan penilaian ini."
   },
