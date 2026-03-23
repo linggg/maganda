@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next'
+import StepOption from './StepOption'
+
+const OPTIONS_FEMALE = ['none', 'pcos', 'thyroid', 'endometriosis', 'prefer_not']
+const OPTIONS_MALE = ['none', 'thyroid', 'prefer_not']
+const HAS_DESC = new Set(['pcos', 'thyroid', 'endometriosis'])
 
 export default function StepHormonalConditions({ value, gender, onChange }) {
   const { t } = useTranslation()
 
   const isMale = gender === 'man'
-  const optionKeys = isMale
-    ? ['none', 'thyroid', 'prefer_not']
-    : ['none', 'pcos', 'thyroid', 'endometriosis', 'prefer_not']
-
+  const optionKeys = isMale ? OPTIONS_MALE : OPTIONS_FEMALE
   const translationBase = isMale
     ? 'onboarding.steps.hormonal_conditions.options_male'
     : 'onboarding.steps.hormonal_conditions.options'
@@ -38,42 +40,15 @@ export default function StepHormonalConditions({ value, gender, onChange }) {
         {t('onboarding.steps.hormonal_conditions.subtitle')}
       </p>
       <div className="space-y-3">
-        {optionKeys.map(key => {
-          const selected = value.includes(key)
-          return (
-            <button
-              key={key}
-              onClick={() => toggle(key)}
-              style={selected ? { backgroundColor: '#617b65', borderColor: '#617b65' } : {}}
-              className={`w-full text-left p-5 rounded-xl border-2 transition-all duration-200 active:scale-[0.98] ${
-                selected
-                  ? 'shadow-md'
-                  : 'bg-white border-outline-variant/30 hover:border-primary/40 hover:bg-surface-container-low'
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <span
-                  style={selected ? { color: '#ffffff' } : {}}
-                  className={`font-bold text-sm ${selected ? '' : 'text-on-surface'}`}
-                >
-                  {t(`${translationBase}.${key}`)}
-                </span>
-                <div
-                  style={selected ? { backgroundColor: '#ffffff', borderColor: '#ffffff' } : {}}
-                  className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
-                    selected ? '' : 'border-outline-variant'
-                  }`}
-                >
-                  {selected && (
-                    <span style={{ color: '#617b65' }} className="material-symbols-outlined text-sm">
-                      check
-                    </span>
-                  )}
-                </div>
-              </div>
-            </button>
-          )
-        })}
+        {optionKeys.map(key => (
+          <StepOption
+            key={key}
+            label={t(`${translationBase}.${key}`)}
+            description={HAS_DESC.has(key) ? t(`${translationBase}.${key}_desc`) : undefined}
+            selected={value.includes(key)}
+            onClick={() => toggle(key)}
+          />
+        ))}
       </div>
     </div>
   )

@@ -61,49 +61,16 @@ export default function StepScalpHair({ scalpType, onScalpTypeChange, hairConcer
         {t('onboarding.steps.scalp_hair.hair_label')}
       </p>
       <div className="space-y-3">
-        {HAIR_OPTIONS.map(opt => {
-          const selected = hairConcerns.includes(opt.key)
-          return (
-            <button
-              key={opt.key}
-              onClick={() => toggleHair(opt.key)}
-              style={selected
-                ? { backgroundColor: '#617b65', borderColor: '#617b65' }
-                : { backgroundColor: '#ffffff', borderColor: '#e1e3e2' }
-              }
-              className="w-full flex items-center gap-4 px-5 py-4 rounded-xl border-2 text-sm font-semibold transition-all duration-200 active:scale-[0.98] outline-none"
-            >
-              <div
-                style={selected ? { backgroundColor: 'rgba(255,255,255,0.2)' } : { backgroundColor: '#ceeacf' }}
-                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-              >
-                <span
-                  style={selected ? { color: '#ffffff' } : { color: '#49624d' }}
-                  className="material-symbols-outlined text-xl"
-                >
-                  {opt.icon}
-                </span>
-              </div>
-              <span
-                style={selected ? { color: '#ffffff' } : { color: '#191c1c' }}
-                className="flex-1 text-left font-semibold"
-              >
-                {t(`onboarding.steps.scalp_hair.hair_options.${opt.key}`)}
-              </span>
-              <div
-                style={selected
-                  ? { backgroundColor: '#ffffff', borderColor: '#ffffff' }
-                  : { borderColor: '#c3c8c0' }
-                }
-                className="w-6 h-6 rounded border-2 flex items-center justify-center flex-shrink-0"
-              >
-                {selected && (
-                  <span style={{ color: '#617b65' }} className="material-symbols-outlined text-sm">check</span>
-                )}
-              </div>
-            </button>
-          )
-        })}
+        {HAIR_OPTIONS.map(opt => (
+          <StepOption
+            key={opt.key}
+            icon={opt.icon}
+            label={t(`onboarding.steps.scalp_hair.hair_options.${opt.key}`)}
+            description={t(`onboarding.steps.scalp_hair.hair_options.${opt.key}_desc`)}
+            selected={hairConcerns.includes(opt.key)}
+            onClick={() => toggleHair(opt.key)}
+          />
+        ))}
       </div>
     </div>
   )

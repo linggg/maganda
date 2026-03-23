@@ -172,11 +172,17 @@
         "subtitle": "해당하는 모든 항목 선택",
         "options": {
           "acne": "여드름 & 트러블",
+          "acne_desc": "여드름, 뾰루지, 또는 막힌 모공",
           "aging": "노화 & 주름",
+          "aging_desc": "잔주름, 깊은 주름, 또는 탄력 저하",
           "hyperpigmentation": "색소침착",
+          "hyperpigmentation_desc": "다크스팟 또는 고르지 않은 피부톤",
           "redness": "홍조 & 로사세아",
+          "redness_desc": "지속적인 홍조 또는 얼룩덜룩한 피부",
           "dryness": "건조함",
+          "dryness_desc": "당김, 각질, 또는 거친 피부",
           "sun_protection": "자외선 차단",
+          "sun_protection_desc": "자외선으로부터 피부 보호",
           "other": "기타"
         }
       },
@@ -235,13 +241,17 @@
         "options": {
           "none": "없음",
           "pcos": "다낭성 난소 증후군",
+          "pcos_desc": "다낭성 난소 증후군 — 호르몬과 생리 주기에 영향을 줍니다",
           "thyroid": "갑상선 질환",
+          "thyroid_desc": "갑상선 기능 항진증 또는 저하증",
           "endometriosis": "자궁내막증",
+          "endometriosis_desc": "자궁 내막과 유사한 조직이 자궁 외부에서 자랍니다",
           "prefer_not": "밝히고 싶지 않음"
         },
         "options_male": {
           "none": "없음",
           "thyroid": "갑상선 질환",
+          "thyroid_desc": "갑상선 기능 항진증 또는 저하증",
           "prefer_not": "밝히고 싶지 않음"
         }
       },
@@ -263,11 +273,17 @@
         },
         "hair_options": {
           "dandruff": "비듬",
+          "dandruff_desc": "두피 각질 또는 모발의 흰 가루",
           "thinning_loss": "가늘어짐 또는 탈모",
+          "thinning_loss_desc": "모발 밀도 감소 또는 심한 빠짐",
           "frizz": "곱슬거림",
+          "frizz_desc": "부스스하거나 다루기 어려운 모발",
           "dryness": "건조함",
+          "dryness_desc": "푸석하고 거칠며 수분이 부족한 모발",
           "colour_treated": "염색 모발",
-          "chemically_treated": "화학 처리 모발 (매직, 케라틴, 펌)"
+          "colour_treated_desc": "염색하거나 탈색한 모발",
+          "chemically_treated": "화학 처리 모발 (매직, 케라틴, 펌)",
+          "chemically_treated_desc": "매직, 퍼머, 또는 케라틴 처리한 모발"
         }
       },
       "body_skin": {
@@ -275,9 +291,13 @@
         "subtitle": "바디 제품의 관련 성분을 표시하는 데 도움이 됩니다",
         "options": {
           "dryness_eczema": "건조함 또는 습진",
+          "dryness_eczema_desc": "거칠고 가렵거나 각질이 일어나는 피부",
           "keratosis_pilaris": "모공각화증",
+          "keratosis_pilaris_desc": "팔이나 허벅지에 자주 생기는 작은 울퉁불퉁한 돌기",
           "hyperpigmentation": "색소침착",
-          "sensitive_reactive": "민감하거나 반응성 피부"
+          "hyperpigmentation_desc": "몸의 다크패치 또는 고르지 않은 피부톤",
+          "sensitive_reactive": "민감하거나 반응성 피부",
+          "sensitive_reactive_desc": "제품이나 섬유에 쉽게 자극받는 피부"
         }
       },
       "nails": {
@@ -285,8 +305,11 @@
         "subtitle": "네일 제품의 관련 성분을 표시하는 데 도움이 됩니다",
         "options": {
           "brittle": "부서지거나 약한 손톱",
+          "brittle_desc": "쉽게 부러지거나 벗겨지는 손톱",
           "fungal_prone": "곰팡이 감염 취약",
-          "sensitive_cuticles": "민감한 큐티클"
+          "fungal_prone_desc": "손발톱 곰팡이가 반복적으로 생기는 경우",
+          "sensitive_cuticles": "민감한 큐티클",
+          "sensitive_cuticles_desc": "큐티클 주변이 쉽게 자극받거나 손상되는 경우"
         },
         "chemical_exposure_label": "저는 젤, 아크릴, 또는 딥파우더를 자주 사용해요"
       },

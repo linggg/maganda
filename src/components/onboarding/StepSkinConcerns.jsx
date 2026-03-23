@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import StepOption from './StepOption'
 
 const options = [
   { key: 'acne', icon: 'dermatology' },
@@ -34,48 +35,17 @@ export default function StepSkinConcerns({ value, onChange }) {
       </p>
       <div className="space-y-3">
         {options.map(opt => {
-          const selected = value.includes(opt.key)
+          const descKey = `onboarding.steps.skin_concerns.options.${opt.key}_desc`
+          const desc = t(descKey, { defaultValue: '' })
           return (
-            <button
+            <StepOption
               key={opt.key}
+              icon={opt.icon}
+              label={t(`onboarding.steps.skin_concerns.options.${opt.key}`)}
+              description={desc || undefined}
+              selected={value.includes(opt.key)}
               onClick={() => toggle(opt.key)}
-              style={selected
-                ? { backgroundColor: '#617b65', borderColor: '#617b65' }
-                : { backgroundColor: '#ffffff', borderColor: '#e1e3e2' }
-              }
-              className="w-full flex items-center gap-4 px-5 py-4 rounded-xl border-2 text-sm font-semibold transition-all duration-200 active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-            >
-              <div
-                style={selected ? { backgroundColor: 'rgba(255,255,255,0.2)' } : { backgroundColor: '#ceeacf' }}
-                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-              >
-                <span
-                  style={selected ? { color: '#ffffff' } : { color: '#49624d' }}
-                  className="material-symbols-outlined text-xl"
-                >
-                  {opt.icon}
-                </span>
-              </div>
-              <span
-                style={selected ? { color: '#ffffff' } : { color: '#191c1c' }}
-                className="flex-1 text-left font-semibold"
-              >
-                {t(`onboarding.steps.skin_concerns.options.${opt.key}`)}
-              </span>
-              <div
-                style={selected
-                  ? { backgroundColor: '#ffffff', borderColor: '#ffffff' }
-                  : { borderColor: '#c3c8c0' }
-                }
-                className="w-6 h-6 rounded border-2 flex items-center justify-center flex-shrink-0"
-              >
-                {selected && (
-                  <span style={{ color: '#617b65' }} className="material-symbols-outlined text-sm">
-                    check
-                  </span>
-                )}
-              </div>
-            </button>
+            />
           )
         })}
       </div>

@@ -174,11 +174,17 @@
         "subtitle": "Chọn tất cả phù hợp",
         "options": {
           "acne": "Mụn & Thâm",
+          "acne_desc": "Mụn đầu đen, mụn mủ, hoặc lỗ chân lông bị tắc",
           "aging": "Lão hoá & Nếp nhăn",
+          "aging_desc": "Nếp nhăn, nếp chân chim, hoặc da chảy xệ",
           "hyperpigmentation": "Tăng sắc tố",
+          "hyperpigmentation_desc": "Đốm thâm hoặc tông màu da không đều",
           "redness": "Đỏ da & Rosacea",
+          "redness_desc": "Da ửng đỏ liên tục hoặc loang lổ",
           "dryness": "Da khô",
+          "dryness_desc": "Da căng, bong tróc, hoặc thô ráp",
           "sun_protection": "Chống nắng",
+          "sun_protection_desc": "Bảo vệ da khỏi tia UV",
           "other": "Khác"
         }
       },
@@ -237,13 +243,17 @@
         "options": {
           "none": "Không có",
           "pcos": "PCOS",
+          "pcos_desc": "Hội chứng buồng trứng đa nang — ảnh hưởng đến hormone và chu kỳ kinh nguyệt",
           "thyroid": "Bệnh tuyến giáp",
+          "thyroid_desc": "Tuyến giáp hoạt động quá mức hoặc kém",
           "endometriosis": "Lạc nội mạc tử cung",
+          "endometriosis_desc": "Mô giống niêm mạc tử cung phát triển bên ngoài tử cung",
           "prefer_not": "Không muốn tiết lộ"
         },
         "options_male": {
           "none": "Không có",
           "thyroid": "Bệnh tuyến giáp",
+          "thyroid_desc": "Tuyến giáp hoạt động quá mức hoặc kém",
           "prefer_not": "Không muốn tiết lộ"
         }
       },
@@ -265,11 +275,17 @@
         },
         "hair_options": {
           "dandruff": "Gàu",
+          "dandruff_desc": "Vảy trên da đầu hoặc bông trắng trên tóc",
           "thinning_loss": "Tóc mỏng hoặc rụng tóc",
+          "thinning_loss_desc": "Mật độ tóc giảm hoặc rụng nhiều",
           "frizz": "Tóc xơ rối",
+          "frizz_desc": "Tóc bồng bềnh hoặc khó kiểm soát",
           "dryness": "Khô",
+          "dryness_desc": "Tóc giòn, thô, hoặc thiếu độ ẩm",
           "colour_treated": "Tóc nhuộm",
-          "chemically_treated": "Tóc xử lý hoá chất (duỗi, keratin, uốn)"
+          "colour_treated_desc": "Tóc được nhuộm hoặc tẩy",
+          "chemically_treated": "Tóc xử lý hoá chất (duỗi, keratin, uốn)",
+          "chemically_treated_desc": "Tóc duỗi, uốn, hoặc xử lý keratin"
         }
       },
       "body_skin": {
@@ -277,9 +293,13 @@
         "subtitle": "Giúp đánh dấu thành phần liên quan trong sản phẩm dưỡng thể",
         "options": {
           "dryness_eczema": "Khô hoặc chàm",
+          "dryness_eczema_desc": "Da thô ráp, ngứa, hoặc bong tróc",
           "keratosis_pilaris": "Viêm nang lông",
+          "keratosis_pilaris_desc": "Nốt sần nhỏ, thường ở cánh tay hoặc đùi",
           "hyperpigmentation": "Tăng sắc tố",
-          "sensitive_reactive": "Da nhạy cảm hoặc dễ kích ứng"
+          "hyperpigmentation_desc": "Đốm thâm hoặc tông màu không đều trên cơ thể",
+          "sensitive_reactive": "Da nhạy cảm hoặc dễ kích ứng",
+          "sensitive_reactive_desc": "Dễ bị kích ứng bởi sản phẩm hoặc vải"
         }
       },
       "nails": {
@@ -287,8 +307,11 @@
         "subtitle": "Giúp đánh dấu thành phần liên quan trong sản phẩm móng",
         "options": {
           "brittle": "Giòn hoặc yếu",
+          "brittle_desc": "Móng dễ gãy, bong, hoặc tróc",
           "fungal_prone": "Dễ bị nấm",
-          "sensitive_cuticles": "Da quanh móng nhạy cảm"
+          "fungal_prone_desc": "Nhiễm nấm móng tái phát",
+          "sensitive_cuticles": "Da quanh móng nhạy cảm",
+          "sensitive_cuticles_desc": "Vùng cutin dễ bị kích ứng hoặc tổn thương"
         },
         "chemical_exposure_label": "Tôi thường xuyên sử dụng gel, acrylic hoặc dip powder"
       },

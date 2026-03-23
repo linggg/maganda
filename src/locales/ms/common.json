@@ -172,11 +172,17 @@
         "subtitle": "Pilih semua yang berkenaan",
         "options": {
           "acne": "Jerawat & Bintik",
+          "acne_desc": "Jerawat, nanah, atau liang roma tersumbat",
           "aging": "Penuaan & Kedutan",
+          "aging_desc": "Garis halus, kedutan, atau kulit kendur",
           "hyperpigmentation": "Hiperpigmentasi",
+          "hyperpigmentation_desc": "Bintik gelap atau warna kulit tidak sekata",
           "redness": "Kemerahan & Rosacea",
+          "redness_desc": "Kulit kemerahan berterusan atau berbintik-bintik",
           "dryness": "Kekeringan",
+          "dryness_desc": "Kulit terasa tegang, mengelupas, atau kasar",
           "sun_protection": "Perlindungan Matahari",
+          "sun_protection_desc": "Melindungi kulit daripada sinaran UV",
           "other": "Lain-lain"
         }
       },
@@ -235,13 +241,17 @@
         "options": {
           "none": "Tiada",
           "pcos": "PCOS",
+          "pcos_desc": "Sindrom ovari polikistik — mempengaruhi hormon dan kitaran haid",
           "thyroid": "Keadaan tiroid",
+          "thyroid_desc": "Kelenjar tiroid yang terlalu aktif atau kurang aktif",
           "endometriosis": "Endometriosis",
+          "endometriosis_desc": "Tisu seperti lapisan rahim tumbuh di luar rahim",
           "prefer_not": "Tidak mahu mendedahkan"
         },
         "options_male": {
           "none": "Tiada",
           "thyroid": "Keadaan tiroid",
+          "thyroid_desc": "Kelenjar tiroid yang terlalu aktif atau kurang aktif",
           "prefer_not": "Tidak mahu mendedahkan"
         }
       },
@@ -263,11 +273,17 @@
         },
         "hair_options": {
           "dandruff": "Kelemumur",
+          "dandruff_desc": "Kepingan kulit kepala atau serpihan putih pada rambut",
           "thinning_loss": "Rambut nipis atau gugur",
+          "thinning_loss_desc": "Ketumpatan rambut berkurang atau gugur berlebihan",
           "frizz": "Rambut kasar",
+          "frizz_desc": "Rambut mengembang atau sukar dikawal",
           "dryness": "Kering",
+          "dryness_desc": "Rambut rapuh, kasar, atau kekurangan kelembapan",
           "colour_treated": "Rambut diwarnai",
-          "chemically_treated": "Rawatan kimia (pelurus, keratin, perm)"
+          "colour_treated_desc": "Rambut yang diwarnai atau disorot",
+          "chemically_treated": "Rawatan kimia (pelurus, keratin, perm)",
+          "chemically_treated_desc": "Rambut yang diluruskan, digelombangkan, atau rawatan keratin"
         }
       },
       "body_skin": {
@@ -275,9 +291,13 @@
         "subtitle": "Membantu menandai bahan berkaitan dalam produk badan",
         "options": {
           "dryness_eczema": "Kekeringan atau ekzema",
+          "dryness_eczema_desc": "Kulit badan yang kasar, gatal, atau mengelupas",
           "keratosis_pilaris": "Keratosis pilaris",
+          "keratosis_pilaris_desc": "Benjolan kecil yang kasar, sering di lengan atau paha",
           "hyperpigmentation": "Hiperpigmentasi",
-          "sensitive_reactive": "Kulit sensitif atau mudah bertindak balas"
+          "hyperpigmentation_desc": "Bintik gelap atau warna tidak sekata pada badan",
+          "sensitive_reactive": "Kulit sensitif atau mudah bertindak balas",
+          "sensitive_reactive_desc": "Mudah iritasi oleh produk atau fabrik"
         }
       },
       "nails": {
@@ -285,8 +305,11 @@
         "subtitle": "Membantu menandai bahan berkaitan dalam produk kuku",
         "options": {
           "brittle": "Rapuh atau lemah",
+          "brittle_desc": "Kuku yang mudah patah, mengelupas, atau retak",
           "fungal_prone": "Mudah dijangkiti kulat",
-          "sensitive_cuticles": "Kutikula sensitif"
+          "fungal_prone_desc": "Jangkitan kulat kuku yang berulang",
+          "sensitive_cuticles": "Kutikula sensitif",
+          "sensitive_cuticles_desc": "Kawasan kutikula yang mudah iritasi atau cedera"
         },
         "chemical_exposure_label": "Saya kerap menggunakan gel, akrilik, atau dip powder"
       },

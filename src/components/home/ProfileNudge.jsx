@@ -40,7 +40,7 @@ export default function ProfileNudge() {
 
   return (
     <div
-      className="mx-6 mb-4 rounded-2xl p-4 flex items-start gap-3"
+      className="rounded-2xl p-4 flex items-start gap-3"
       style={{ backgroundColor: '#eef3ef', border: '1px solid #c8d8cb' }}
     >
       <span

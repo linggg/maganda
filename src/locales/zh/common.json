@@ -174,11 +174,17 @@
         "subtitle": "选择所有适用项",
         "options": {
           "acne": "痘痘与瑕疵",
+          "acne_desc": "粉刺、痘痘或毛孔堵塞",
           "aging": "老化与细纹",
+          "aging_desc": "细纹、皱纹或皮肤松弛",
           "hyperpigmentation": "色素沉着",
+          "hyperpigmentation_desc": "暗斑或肤色不均",
           "redness": "泛红与玫瑰痤疮",
+          "redness_desc": "持续性潮红或皮肤斑驳",
           "dryness": "干燥",
+          "dryness_desc": "皮肤紧绷、脱皮或粗糙",
           "sun_protection": "防晒",
+          "sun_protection_desc": "保护皮肤免受紫外线伤害",
           "other": "其他"
         }
       },
@@ -237,13 +243,17 @@
         "options": {
           "none": "无",
           "pcos": "多囊卵巢综合征",
+          "pcos_desc": "多囊卵巢综合征 — 影响激素水平和月经周期",
           "thyroid": "甲状腺疾病",
+          "thyroid_desc": "甲状腺功能亢进或减退",
           "endometriosis": "子宫内膜异位症",
+          "endometriosis_desc": "类似子宫内膜的组织在子宫外生长",
           "prefer_not": "不愿透露"
         },
         "options_male": {
           "none": "无",
           "thyroid": "甲状腺疾病",
+          "thyroid_desc": "甲状腺功能亢进或减退",
           "prefer_not": "不愿透露"
         }
       },
@@ -265,11 +275,17 @@
         },
         "hair_options": {
           "dandruff": "头皮屑",
+          "dandruff_desc": "头皮脱屑或头发上的白色碎屑",
           "thinning_loss": "发量稀少或脱发",
+          "thinning_loss_desc": "发量减少或掉发增多",
           "frizz": "毛躁",
+          "frizz_desc": "头发蓬乱或难以打理",
           "dryness": "干燥",
+          "dryness_desc": "头发脆弱、粗糙或缺乏水分",
           "colour_treated": "染发",
-          "chemically_treated": "化学处理（拉直、角蛋白、烫发）"
+          "colour_treated_desc": "经过染色或漂白的头发",
+          "chemically_treated": "化学处理（拉直、角蛋白、烫发）",
+          "chemically_treated_desc": "经过拉直、烫发或角蛋白护理的头发"
         }
       },
       "body_skin": {
@@ -277,9 +293,13 @@
         "subtitle": "帮助标记身体护肤品中的相关成分",
         "options": {
           "dryness_eczema": "干燥或湿疹",
+          "dryness_eczema_desc": "身体皮肤粗糙、瘙痒或脱皮",
           "keratosis_pilaris": "毛囊角化症",
+          "keratosis_pilaris_desc": "常见于手臂或大腿的细小粗糙突起",
           "hyperpigmentation": "色素沉着",
-          "sensitive_reactive": "敏感或易反应肌肤"
+          "hyperpigmentation_desc": "身体部位的暗斑或肤色不均",
+          "sensitive_reactive": "敏感或易反应肌肤",
+          "sensitive_reactive_desc": "容易被产品或面料刺激的皮肤"
         }
       },
       "nails": {
@@ -287,8 +307,11 @@
         "subtitle": "帮助标记指甲产品中的相关成分",
         "options": {
           "brittle": "脆弱或易断",
+          "brittle_desc": "容易断裂、剥落或碎裂的指甲",
           "fungal_prone": "易感染真菌",
-          "sensitive_cuticles": "甲周皮肤敏感"
+          "fungal_prone_desc": "反复出现指甲真菌感染",
+          "sensitive_cuticles": "甲周皮肤敏感",
+          "sensitive_cuticles_desc": "甲周区域容易受到刺激或损伤"
         },
         "chemical_exposure_label": "我经常使用凝胶、亚克力或浸泡粉"
       },

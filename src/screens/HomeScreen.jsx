@@ -204,10 +204,10 @@ export default function HomeScreen() {
           )}
         </div>
 
-        {/* New user: ProfileNudge only */}
-        {isNewUser && <ProfileNudge />}
+        {/* ProfileNudge — always directly below hero when visible */}
+        <ProfileNudge />
 
-        {/* Returning user: last checked + saves + nudge */}
+        {/* Returning user: last checked + saves */}
         {!isNewUser && (
           <>
             {/* Last checked card */}
@@ -275,7 +275,6 @@ export default function HomeScreen() {
               </button>
             )}
 
-            <ProfileNudge />
           </>
         )}
 

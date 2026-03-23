@@ -1,10 +1,12 @@
 import ProductCard from './ProductCard'
 import { useTranslation } from 'react-i18next'
 
-export default function SearchResults({ results, onSelect, query }) {
+export default function SearchResults({ results, onSelect, query, loading }) {
   const { t } = useTranslation()
 
   if (!query || query.trim().length < 2) return null
+
+  if (loading) return null
 
   if (results.length === 0) {
     return (

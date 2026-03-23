@@ -174,11 +174,17 @@
         "subtitle": "Select all that apply",
         "options": {
           "acne": "Acne & Blemishes",
+          "acne_desc": "Breakouts, pimples, or clogged pores",
           "aging": "Aging & Fine Lines",
+          "aging_desc": "Fine lines, wrinkles, or loss of firmness",
           "hyperpigmentation": "Hyperpigmentation",
+          "hyperpigmentation_desc": "Dark spots or uneven skin tone",
           "redness": "Redness & Rosacea",
+          "redness_desc": "Persistent flushing or blotchy skin",
           "dryness": "Dryness",
+          "dryness_desc": "Tight, flaky, or rough skin",
           "sun_protection": "Sun Protection",
+          "sun_protection_desc": "Protecting skin from UV damage",
           "other": "Other"
         }
       },
@@ -237,13 +243,17 @@
         "options": {
           "none": "None",
           "pcos": "PCOS",
+          "pcos_desc": "Polycystic ovary syndrome — affects hormones and cycles",
           "thyroid": "Thyroid condition",
+          "thyroid_desc": "Overactive or underactive thyroid gland",
           "endometriosis": "Endometriosis",
+          "endometriosis_desc": "Uterine-like tissue grows outside the uterus",
           "prefer_not": "Prefer not to say"
         },
         "options_male": {
           "none": "None",
           "thyroid": "Thyroid condition",
+          "thyroid_desc": "Overactive or underactive thyroid gland",
           "prefer_not": "Prefer not to say"
         }
       },
@@ -265,11 +275,17 @@
         },
         "hair_options": {
           "dandruff": "Dandruff",
+          "dandruff_desc": "Flaky scalp or white flakes on hair",
           "thinning_loss": "Thinning or hair loss",
+          "thinning_loss_desc": "Reduced hair density or shedding",
           "frizz": "Frizz",
+          "frizz_desc": "Unruly or puffy hair texture",
           "dryness": "Dryness",
+          "dryness_desc": "Brittle, rough, or thirsty hair",
           "colour_treated": "Colour-treated",
-          "chemically_treated": "Chemically treated (relaxer, keratin, perm)"
+          "colour_treated_desc": "Hair dyed or highlighted",
+          "chemically_treated": "Chemically treated (relaxer, keratin, perm)",
+          "chemically_treated_desc": "Relaxed, permed, or keratin-treated hair"
         }
       },
       "body_skin": {
@@ -277,9 +293,13 @@
         "subtitle": "Helps us flag relevant ingredients in body products",
         "options": {
           "dryness_eczema": "Dryness or eczema",
+          "dryness_eczema_desc": "Rough, itchy, or flaky body skin",
           "keratosis_pilaris": "Keratosis pilaris",
+          "keratosis_pilaris_desc": "Small rough bumps, often on arms or thighs",
           "hyperpigmentation": "Hyperpigmentation",
-          "sensitive_reactive": "Sensitive or reactive skin"
+          "hyperpigmentation_desc": "Dark patches or uneven tone on the body",
+          "sensitive_reactive": "Sensitive or reactive skin",
+          "sensitive_reactive_desc": "Easily irritated by products or fabrics"
         }
       },
       "nails": {
@@ -287,8 +307,11 @@
         "subtitle": "Helps us flag relevant ingredients in nail products",
         "options": {
           "brittle": "Brittle or weak",
+          "brittle_desc": "Nails that break, peel, or chip easily",
           "fungal_prone": "Fungal-prone",
-          "sensitive_cuticles": "Sensitive cuticles"
+          "fungal_prone_desc": "Recurring nail fungal infections",
+          "sensitive_cuticles": "Sensitive cuticles",
+          "sensitive_cuticles_desc": "Easily irritated or damaged cuticle area"
         },
         "chemical_exposure_label": "I regularly use gel, acrylic, or dip powder"
       },

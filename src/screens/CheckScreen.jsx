@@ -213,6 +213,7 @@ export default function CheckScreen() {
               results={results}
               onSelect={handleProductSelect}
               query={query}
+              loading={loading}
             />
           </div>
         )}
