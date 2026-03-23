@@ -1,4 +1,18 @@
 {
+  "home": {
+    "welcome": "Selamat datang ke Maganda",
+    "tagline": "Semak mana-mana produk kecantikan untuk keselamatan dan keberkesanan — diperibadikan untuk anda",
+    "cta_first": "Semak produk pertama anda",
+    "cta_check": "Semak produk",
+    "last_checked": "TERAKHIR DISEMAK",
+    "your_saves": "SIMPANAN ANDA",
+    "loved": "Suka sangat",
+    "wishlist": "Wishlist",
+    "not_for_me": "Tidak sesuai",
+    "good_morning": "Selamat pagi",
+    "good_afternoon": "Selamat tengah hari",
+    "good_evening": "Selamat petang"
+  },
   "app": { "name": "Maganda" },
   "reset_password": {
     "title": "Tetapkan kata laluan baharu",

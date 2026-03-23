@@ -1,4 +1,18 @@
 {
+  "home": {
+    "welcome": "Maganda에 오신 것을 환영합니다",
+    "tagline": "모든 뷰티 제품의 안전성과 효과를 확인하세요 — 나에게 맞춤화된",
+    "cta_first": "첫 번째 제품 확인하기",
+    "cta_check": "제품 확인하기",
+    "last_checked": "최근 확인",
+    "your_saves": "저장 목록",
+    "loved": "너무 좋아요",
+    "wishlist": "Wishlist",
+    "not_for_me": "안 맞아요",
+    "good_morning": "좋은 아침이에요",
+    "good_afternoon": "좋은 오후예요",
+    "good_evening": "좋은 저녁이에요"
+  },
   "app": { "name": "Maganda" },
   "reset_password": {
     "title": "새 비밀번호 설정",

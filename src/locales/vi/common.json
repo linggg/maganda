@@ -1,4 +1,18 @@
 {
+  "home": {
+    "welcome": "Chào mừng đến với Maganda",
+    "tagline": "Kiểm tra bất kỳ sản phẩm làm đẹp nào về độ an toàn và hiệu quả — được cá nhân hóa cho bạn",
+    "cta_first": "Kiểm tra sản phẩm đầu tiên",
+    "cta_check": "Kiểm tra sản phẩm",
+    "last_checked": "VỪA KIỂM TRA",
+    "your_saves": "ĐÃ LƯU",
+    "loved": "Yêu thích",
+    "wishlist": "Wishlist",
+    "not_for_me": "Không hợp",
+    "good_morning": "Chào buổi sáng",
+    "good_afternoon": "Chào buổi chiều",
+    "good_evening": "Chào buổi tối"
+  },
   "app": {
     "name": "Maganda"
   },

@@ -1,4 +1,18 @@
 {
+  "home": {
+    "welcome": "Maligayang pagdating sa Maganda",
+    "tagline": "Suriin ang anumang beauty product para sa kaligtasan at bisa — personalisado para sa iyo",
+    "cta_first": "I-check ang iyong unang produkto",
+    "cta_check": "Mag-check ng produkto",
+    "last_checked": "HULING NASURI",
+    "your_saves": "MGA NAKA-SAVE",
+    "loved": "Love it",
+    "wishlist": "Wishlist",
+    "not_for_me": "Hindi para sa akin",
+    "good_morning": "Magandang umaga",
+    "good_afternoon": "Magandang hapon",
+    "good_evening": "Magandang gabi"
+  },
   "app": { "name": "Maganda" },
   "reset_password": {
     "title": "Magtakda ng bagong password",

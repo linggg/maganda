@@ -1,4 +1,18 @@
 {
+  "home": {
+    "welcome": "欢迎使用 Maganda",
+    "tagline": "检查任何美妆产品的安全性与功效 — 专为您个性化定制",
+    "cta_first": "检查您的第一个产品",
+    "cta_check": "检查产品",
+    "last_checked": "最近检查",
+    "your_saves": "我的收藏",
+    "loved": "太爱了",
+    "wishlist": "Wishlist",
+    "not_for_me": "不适合我",
+    "good_morning": "早上好",
+    "good_afternoon": "下午好",
+    "good_evening": "晚上好"
+  },
   "app": {
     "name": "Maganda"
   },

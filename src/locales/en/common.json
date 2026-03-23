@@ -85,6 +85,20 @@
   "app": {
     "name": "Maganda"
   },
+  "home": {
+    "welcome": "Welcome to Maganda",
+    "tagline": "Check any beauty product for safety and efficacy — personalised to you",
+    "cta_first": "Check your first product",
+    "cta_check": "Check a product",
+    "last_checked": "LAST CHECKED",
+    "your_saves": "YOUR SAVES",
+    "loved": "Loved",
+    "wishlist": "Wishlist",
+    "not_for_me": "Not for me",
+    "good_morning": "Good morning",
+    "good_afternoon": "Good afternoon",
+    "good_evening": "Good evening"
+  },
   "reset_password": {
     "title": "Set new password",
     "subtitle": "Choose a new password for your account",

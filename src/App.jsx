@@ -5,7 +5,6 @@ import AuthScreen from './screens/AuthScreen'
 import OnboardingScreen from './screens/OnboardingScreen'
 import HomeScreen from './screens/HomeScreen'
 import CheckScreen from './screens/CheckScreen'
-import InsightsScreen from './screens/InsightsScreen'
 import SavedScreen from './screens/SavedScreen'
 import AssessmentScreen from './screens/AssessmentScreen'
 import StandaloneNotesScreen from './screens/StandaloneNotesScreen'
@@ -66,9 +65,6 @@ export default function App() {
         } />
         <Route path="/check" element={
           <ProtectedRoute><CheckScreen /><BottomNav /></ProtectedRoute>
-        } />
-        <Route path="/insights" element={
-          <ProtectedRoute><InsightsScreen /><BottomNav /></ProtectedRoute>
         } />
         <Route path="/saved" element={
           <ProtectedRoute><SavedScreen /><BottomNav /></ProtectedRoute>
